@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a recently viewed items feature using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>351. Create a recently viewed items feature using localStorage</h1>
+      <p class="description">Demonstrates tracking the last few items a user 'viewed', persisted across visits.</p>
+      <div class="demo-area">
+<div class="row"><button onclick="viewItem('Laptop')">View Laptop</button><button onclick="viewItem('Phone')">View Phone</button><button onclick="viewItem('Watch')">View Watch</button></div><pre id="recentlyViewedOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 351 of 425</footer>
+<script>
+function viewItem(item) {
+  let recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+  recent = [item, ...recent.filter(i => i !== item)].slice(0, 3); // keep last 3, no duplicates
+  localStorage.setItem('recentlyViewed', JSON.stringify(recent));
+  renderRecentlyViewed();
+}
+function renderRecentlyViewed() {
+  const recent = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
+  document.getElementById('recentlyViewedOut').textContent = 'Recently viewed: ' + (recent.join(', ') || '(none yet)');
+}
+renderRecentlyViewed();
+</script>
+</body>
+</html>

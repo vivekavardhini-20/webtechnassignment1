@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to demonstrate regular expressions in JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>154. Write a program to demonstrate regular expressions in JavaScript</h1>
+      <p class="description">Demonstrates building and testing several regular expressions against sample text.</p>
+      <div class="demo-area">
+<pre id="regexJsOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 154 of 425</footer>
+<script>
+const text = 'Order #4521 shipped on 2026-09-15';
+const hasDigits = /\d+/.test(text);
+const orderNumber = text.match(/#(\d+)/);
+const datePattern = text.match(/\d{4}-\d{2}-\d{2}/);
+document.getElementById('regexJsOut').textContent =
+`Text: "${text}"
+Contains digits? ${hasDigits}
+Order number match: ${orderNumber ? orderNumber[1] : 'none'}
+Date found: ${datePattern ? datePattern[0] : 'none'}`;
+</script>
+</body>
+</html>

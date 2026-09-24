@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a program to search/filter table records</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#filterTable { width: 100%; border-collapse: collapse; margin-top: 10px; } #filterTable th, #filterTable td { border: 1px solid var(--border); padding: 8px; } #filterTable th { background: var(--navy); color: #fff; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>165. Create a program to search/filter table records</h1>
+      <p class="description">Demonstrates filtering visible table rows in real time as the user types into a search box.</p>
+      <div class="demo-area">
+<input type="text" id="tableFilterInput" placeholder="Search by name..." oninput="filterTable()"><table id="filterTable"><thead><tr><th>Name</th><th>Course</th></tr></thead><tbody><tr><td>Shaik Abdulkalam</td><td>CSE AI/ML</td></tr><tr><td>Priya Sharma</td><td>Web Tech</td></tr><tr><td>Rahul Verma</td><td>DAA</td></tr></tbody></table>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 165 of 425</footer>
+<script>
+function filterTable() {
+  const query = document.getElementById('tableFilterInput').value.toLowerCase();
+  document.querySelectorAll('#filterTable tbody tr').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(query) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

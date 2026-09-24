@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store temporary form data using sessionStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>354. Store temporary form data using sessionStorage</h1>
+      <p class="description">Demonstrates saving in-progress form data to sessionStorage so it survives navigating between form steps within the same tab session.</p>
+      <div class="demo-area">
+<div class="demo-form"><label>Full Name</label><input type="text" id="sessFormName" oninput="saveSessionFormData()"></div><p id="sessFormOut" style="color:var(--muted);"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 354 of 425</footer>
+<script>
+function saveSessionFormData() {
+  sessionStorage.setItem('draftName', document.getElementById('sessFormName').value);
+  document.getElementById('sessFormOut').textContent = 'Draft saved to sessionStorage for this tab session.';
+}
+// Restore any draft already in progress
+document.getElementById('sessFormName').value = sessionStorage.getItem('draftName') || '';
+</script>
+</body>
+</html>

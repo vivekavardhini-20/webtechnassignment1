@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a countdown timer using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#cd-display { font-size: 2.6rem; font-weight: 700; text-align: center; color: var(--navy); background: var(--light-blue); padding: 24px; border-radius: 12px; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>125. Create a countdown timer using JavaScript</h1>
+      <p class="description">Enter minutes and seconds, then start a countdown. Uses setInterval to decrement the remaining time each second.</p>
+      <div class="demo-area">
+<div class="row" style="justify-content:center;">
+  <div><label>Minutes</label><br><input type="number" id="cdMinutes" min="0" value="1" style="width:70px;"></div>
+  <div><label>Seconds</label><br><input type="number" id="cdSeconds" min="0" max="59" value="0" style="width:70px;"></div>
+</div>
+<div id="cd-display">01:00</div>
+<div id="cd-message" style="text-align:center; font-weight:700; color:var(--accent);"></div>
+<div class="row" style="justify-content:center;"><button onclick="startCountdown()">Start</button><button onclick="resetCountdown()">Reset</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 125 of 425</footer>
+<script>
+const cdDisplay = document.getElementById('cd-display');
+const cdMessage = document.getElementById('cd-message');
+const minutesInput = document.getElementById('cdMinutes');
+const secondsInput = document.getElementById('cdSeconds');
+let remainingSeconds = 60, cdTimerId = null;
+function pad(n) { return n.toString().padStart(2, '0'); }
+function renderCountdown() {
+  const m = Math.floor(remainingSeconds / 60), s = remainingSeconds % 60;
+  cdDisplay.textContent = `${pad(m)}:${pad(s)}`;
+}
+function startCountdown() {
+  if (cdTimerId) return;
+  if (remainingSeconds === 0) remainingSeconds = (parseInt(minutesInput.value, 10) || 0) * 60 + (parseInt(secondsInput.value, 10) || 0);
+  cdMessage.textContent = '';
+  renderCountdown();
+  cdTimerId = setInterval(() => {
+    remainingSeconds--;
+    renderCountdown();
+    if (remainingSeconds <= 0) { clearInterval(cdTimerId); cdTimerId = null; cdMessage.textContent = "Time's up!"; }
+  }, 1000);
+}
+function resetCountdown() {
+  clearInterval(cdTimerId); cdTimerId = null;
+  remainingSeconds = (parseInt(minutesInput.value, 10) || 0) * 60 + (parseInt(secondsInput.value, 10) || 0);
+  cdMessage.textContent = '';
+  renderCountdown();
+}
+renderCountdown();
+</script>
+</body>
+</html>

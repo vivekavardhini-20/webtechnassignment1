@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a program that counts the number of keyboard key presses</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>254. Create a program that counts the number of keyboard key presses</h1>
+      <p class="description">Demonstrates counting every keydown event that occurs inside an input field.</p>
+      <div class="demo-area">
+<input type="text" id="keyCountInput" placeholder="Start typing..."><p id="keyCountOut" style="font-weight:700;">Key presses: 0</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 254 of 425</footer>
+<script>
+let keyPressCount = 0;
+document.getElementById('keyCountInput').addEventListener('keydown', () => {
+  keyPressCount++;
+  document.getElementById('keyCountOut').textContent = 'Key presses: ' + keyPressCount;
+});
+</script>
+</body>
+</html>

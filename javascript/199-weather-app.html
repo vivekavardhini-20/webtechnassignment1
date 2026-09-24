@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a weather application using an API</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>199. Create a weather application using an API</h1>
+      <p class="description">Fetches live weather data for a city from the free Open-Meteo public API (no key required) and displays it.</p>
+      <div class="demo-area">
+<input type="text" id="weatherCity" value="Chennai" placeholder="City name"><button onclick="getWeather()">Get Weather</button><pre id="weatherOut">Enter a city and click Get Weather.</pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 199 of 425</footer>
+<script>
+const cityCoords = { chennai: [13.08, 80.27], mumbai: [19.07, 72.87], delhi: [28.61, 77.20], bengaluru: [12.97, 77.59], hyderabad: [17.38, 78.48] };
+async function getWeather() {
+  const city = document.getElementById('weatherCity').value.trim().toLowerCase();
+  const out = document.getElementById('weatherOut');
+  const coords = cityCoords[city];
+  if (!coords) { out.textContent = 'Demo supports: Chennai, Mumbai, Delhi, Bengaluru, Hyderabad'; return; }
+  out.textContent = 'Fetching...';
+  try {
+    const [lat, lon] = coords;
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+    const data = await res.json();
+    const w = data.current_weather;
+    out.textContent = `Weather in ${city}:\nTemperature: ${w.temperature}\u00b0C\nWindspeed: ${w.windspeed} km/h\nTime: ${w.time}`;
+  } catch (err) { out.textContent = 'Could not fetch weather (needs internet connection): ' + err.message; }
+}
+</script>
+</body>
+</html>

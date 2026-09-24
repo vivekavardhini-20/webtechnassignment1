@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sort table records using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#sortTable { width: 100%; border-collapse: collapse; } #sortTable th, #sortTable td { border: 1px solid var(--border); padding: 8px; } #sortTable th { background: var(--navy); color: #fff; cursor: pointer; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>228. Sort table records using JavaScript</h1>
+      <p class="description">Demonstrates sorting table rows alphabetically or numerically when a column header is clicked.</p>
+      <div class="demo-area">
+<table id="sortTable"><thead><tr><th onclick="sortTableCol(0)">Name &#8645;</th><th onclick="sortTableCol(1)">Marks &#8645;</th></tr></thead><tbody><tr><td>Rahul</td><td>78</td></tr><tr><td>Shaik</td><td>92</td></tr><tr><td>Priya</td><td>88</td></tr></tbody></table>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 228 of 425</footer>
+<script>
+function sortTableCol(colIndex) {
+  const tbody = document.querySelector('#sortTable tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  rows.sort((a, b) => {
+    const aText = a.cells[colIndex].textContent.trim();
+    const bText = b.cells[colIndex].textContent.trim();
+    const aNum = parseFloat(aText), bNum = parseFloat(bText);
+    if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+    return aText.localeCompare(bText);
+  });
+  rows.forEach(row => tbody.appendChild(row));
+}
+</script>
+</body>
+</html>

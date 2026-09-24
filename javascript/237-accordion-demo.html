@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an accordion using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.accordion-item { border: 1px solid var(--border); border-radius: 6px; margin-bottom: 6px; overflow: hidden; } .accordion-header { background: var(--light-blue); padding: 10px; cursor: pointer; font-weight: 600; } .accordion-panel { display: none; padding: 10px; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>237. Create an accordion using JavaScript</h1>
+      <p class="description">Demonstrates a vertically stacked accordion where clicking a header expands/collapses its panel.</p>
+      <div class="demo-area">
+<div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Section 1 &#9662;</div><div class="accordion-panel">Content for section 1.</div></div><div class="accordion-item"><div class="accordion-header" onclick="toggleAccordion(this)">Section 2 &#9662;</div><div class="accordion-panel">Content for section 2.</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 237 of 425</footer>
+<script>
+function toggleAccordion(header) {
+  const panel = header.nextElementSibling;
+  panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a to-do list using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>345. Create a to-do list using localStorage</h1>
+      <p class="description">A to-do list that saves its items to localStorage, so tasks survive a page refresh.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="persistTodoInput" placeholder="New task"><button onclick="addPersistTodo()">Add</button></div><ul id="persistTodoList" style="list-style:none; padding:0;"></ul>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 345 of 425</footer>
+<script>
+function getPersistTodos() { return JSON.parse(localStorage.getItem('persistentTodos') || '[]'); }
+function savePersistTodos(todos) { localStorage.setItem('persistentTodos', JSON.stringify(todos)); }
+function addPersistTodo() {
+  const text = document.getElementById('persistTodoInput').value.trim();
+  if (!text) return;
+  const todos = getPersistTodos(); todos.push(text); savePersistTodos(todos);
+  document.getElementById('persistTodoInput').value = '';
+  renderPersistTodos();
+}
+function renderPersistTodos() {
+  const list = document.getElementById('persistTodoList');
+  list.innerHTML = '';
+  getPersistTodos().forEach((t, i) => {
+    const li = document.createElement('li');
+    li.style.cssText = 'background:var(--light-blue); padding:8px; margin-bottom:6px; border-radius:6px;';
+    li.textContent = t;
+    list.appendChild(li);
+  });
+}
+renderPersistTodos();
+</script>
+</body>
+</html>

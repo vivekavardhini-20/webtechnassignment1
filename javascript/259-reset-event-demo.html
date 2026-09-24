@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate the reset event</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>259. Demonstrate the reset event</h1>
+      <p class="description">Demonstrates detecting when a form's Reset button is clicked, using the 'reset' event.</p>
+      <div class="demo-area">
+<form class="demo-form" id="resetEventForm"><input type="text" value="Some text" placeholder="Text field"><button type="reset">Reset Form</button></form><p id="resetEventOut" style="color:var(--muted);"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 259 of 425</footer>
+<script>
+document.getElementById('resetEventForm').addEventListener('reset', () => { document.getElementById('resetEventOut').textContent = 'Reset event fired - form cleared at ' + new Date().toLocaleTimeString(); });
+</script>
+</body>
+</html>

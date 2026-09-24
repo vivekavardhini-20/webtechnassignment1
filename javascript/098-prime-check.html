@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to check whether a number is prime</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>98. Write a program to check whether a number is prime</h1>
+      <p class="description">Tests divisibility from 2 up to the square root of the number to determine primality.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="primeInput" value="29" min="0"><button onclick="checkPrime()">Check</button></div><div class="box" id="primeOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 98 of 425</footer>
+<script>
+function isPrime(n) {
+  if (n < 2) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) if (n % i === 0) return false;
+  return true;
+}
+function checkPrime() {
+  const n = parseInt(document.getElementById('primeInput').value, 10);
+  document.getElementById('primeOut').textContent = n + ' is ' + (isPrime(n) ? 'a Prime number' : 'NOT a Prime number');
+}
+checkPrime();
+</script>
+</body>
+</html>

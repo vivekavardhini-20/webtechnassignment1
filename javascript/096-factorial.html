@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the factorial of a number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>96. Write a program to find the factorial of a number</h1>
+      <p class="description">Calculates n! using a simple iterative loop.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="factInput" value="5" min="0"><button onclick="calcFactorial()">Calculate</button></div><div class="box" id="factOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 96 of 425</footer>
+<script>
+function calcFactorial() {
+  const n = parseInt(document.getElementById('factInput').value, 10);
+  if (n < 0) { document.getElementById('factOut').textContent = 'Factorial undefined for negative numbers'; return; }
+  let result = 1;
+  for (let i = 2; i <= n; i++) result *= i;
+  document.getElementById('factOut').textContent = `${n}! = ${result}`;
+}
+calcFactorial();
+</script>
+</body>
+</html>

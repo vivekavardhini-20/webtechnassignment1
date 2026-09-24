@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test REST APIs using Postman</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>422. Test REST APIs using Postman</h1>
+      <p class="description">Explains the workflow for testing the Express REST APIs above using Postman, a popular API testing tool.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">Steps to test with Postman:
+1. Start your Express server locally: node server.js  (e.g. running on http://localhost:3000)
+2. Open Postman and create a new request.
+3. Set the request method (GET, POST, PUT, DELETE) to match the route you want to test.
+4. Enter the full URL, e.g. http://localhost:3000/api/students
+5. For POST/PUT requests: go to the &quot;Body&quot; tab, select &quot;raw&quot; + &quot;JSON&quot;, and enter your JSON payload,
+   e.g. { &quot;name&quot;: &quot;Shaik Abdulkalam&quot;, &quot;course&quot;: &quot;CSE AI/ML&quot;, &quot;cgpa&quot;: 8.28 }
+6. Click &quot;Send&quot; and inspect the response status code and JSON body returned.
+7. Save requests into a &quot;Collection&quot; so the whole API can be re-tested with one click later.</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 422 of 425</footer>
+
+</body>
+</html>

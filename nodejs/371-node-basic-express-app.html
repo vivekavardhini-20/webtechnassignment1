@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a basic Express.js application</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>371. Create a basic Express.js application</h1>
+      <p class="description">The minimal starting point for any Express.js web application.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const express = require(&#x27;express&#x27;);
+const app = express();
+const PORT = 3000;
+
+app.get(&#x27;/&#x27;, (req, res) =&gt; {
+  res.send(&#x27;Welcome to my basic Express app!&#x27;);
+});
+
+app.listen(PORT, () =&gt; {
+  console.log(`Express server running at http://localhost:${PORT}`);
+});
+// Requires: npm install express</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 371 of 425</footer>
+
+</body>
+</html>

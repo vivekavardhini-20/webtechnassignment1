@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to count the number of digits in a number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>143. Write a program to count the number of digits in a number</h1>
+      <p class="description">Counts digits by converting to a string, or mathematically using Math.log10().</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="countDigitsInput" value="123456"><button onclick="countDigits()">Count</button></div><div class="box" id="countDigitsOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 143 of 425</footer>
+<script>
+function countDigits() {
+  const n = Math.abs(parseInt(document.getElementById('countDigitsInput').value, 10));
+  const stringMethod = n.toString().length;
+  const mathMethod = n === 0 ? 1 : Math.floor(Math.log10(n)) + 1;
+  document.getElementById('countDigitsOut').textContent = `${n} has ${stringMethod} digits (string method) / ${mathMethod} digits (math method)`;
+}
+countDigits();
+</script>
+</body>
+</html>

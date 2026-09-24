@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update database records using Node.js</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>396. Update database records using Node.js</h1>
+      <p class="description">Demonstrates updating an existing document using Mongoose's findByIdAndUpdate().</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const Student = require(&#x27;./models/Student&#x27;);
+
+async function updateStudent(id) {
+  const updated = await Student.findByIdAndUpdate(
+    id,
+    { cgpa: 9.0 },
+    { new: true } // return the updated document, not the old one
+  );
+  console.log(&#x27;Updated student:&#x27;, updated);
+}
+updateStudent(&#x27;someId&#x27;);</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 396 of 425</footer>
+
+</body>
+</html>

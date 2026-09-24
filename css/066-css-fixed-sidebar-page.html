@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage with a fixed sidebar</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.fixed-sidebar-demo { display: flex; height: 160px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); } .fixed-sidebar-nav { width: 90px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; flex-shrink: 0; } .fixed-sidebar-content { padding: 10px; overflow-y: auto; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>66. Create a webpage with a fixed sidebar</h1>
+      <p class="description">A layout with a sidebar that stays in place while the main content area scrolls independently.</p>
+      <div class="demo-area">
+<div class="fixed-sidebar-demo"><div class="fixed-sidebar-nav">Fixed<br>Sidebar</div><div class="fixed-sidebar-content"><p>Scrollable main content...</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 66 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an image hover effect using CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.img-hover-wrap { position: relative; width: 180px; height: 130px; overflow: hidden; border-radius: 10px; } .img-hover-box { width: 100%; height: 100%; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; transition: transform 0.3s ease; } .img-hover-overlay { position: absolute; inset: 0; background: rgba(31,56,100,0.75); color: #fff; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; font-weight: 700; } .img-hover-wrap:hover .img-hover-box { transform: scale(1.1); } .img-hover-wrap:hover .img-hover-overlay { opacity: 1; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>55. Create an image hover effect using CSS</h1>
+      <p class="description">Demonstrates a zoom-and-overlay effect on an image (represented by a colored box) when hovered.</p>
+      <div class="demo-area">
+<div class="img-hover-wrap"><div class="img-hover-box">Photo</div><div class="img-hover-overlay">View Details</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 55 of 425</footer>
+
+</body>
+</html>

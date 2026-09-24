@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a CRUD application using localStorage - Create, Read, Update, and Delete records</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>360. Create a CRUD application using localStorage - Create, Read, Update, and Delete records</h1>
+      <p class="description">A complete Create, Read, Update and Delete interface for a list of notes, fully backed by localStorage.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="crudInput" placeholder="Note text"><button onclick="crudCreate()">Create</button></div><ul id="crudList" style="list-style:none; padding:0;"></ul>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 360 of 425</footer>
+<script>
+function crudGetAll() { return JSON.parse(localStorage.getItem('crudNotes') || '[]'); }
+function crudSaveAll(notes) { localStorage.setItem('crudNotes', JSON.stringify(notes)); }
+function crudCreate() {
+  const text = document.getElementById('crudInput').value.trim();
+  if (!text) return;
+  const notes = crudGetAll();
+  notes.push({ id: Date.now(), text });
+  crudSaveAll(notes);
+  document.getElementById('crudInput').value = '';
+  crudRender();
+}
+function crudUpdate(id) {
+  const newText = prompt('Edit note:');
+  if (newText === null) return;
+  const notes = crudGetAll().map(n => n.id === id ? { ...n, text: newText } : n);
+  crudSaveAll(notes);
+  crudRender();
+}
+function crudDelete(id) {
+  crudSaveAll(crudGetAll().filter(n => n.id !== id));
+  crudRender();
+}
+function crudRender() {
+  const list = document.getElementById('crudList');
+  list.innerHTML = '';
+  crudGetAll().forEach(note => {
+    const li = document.createElement('li');
+    li.style.cssText = 'display:flex; justify-content:space-between; background:var(--light-blue); padding:8px; margin-bottom:6px; border-radius:6px;';
+    const span = document.createElement('span'); span.textContent = note.text;
+    const btnGroup = document.createElement('span');
+    const editBtn = document.createElement('button'); editBtn.textContent = 'Edit'; editBtn.onclick = () => crudUpdate(note.id);
+    const delBtn = document.createElement('button'); delBtn.textContent = 'Delete'; delBtn.style.marginLeft = '6px'; delBtn.onclick = () => crudDelete(note.id);
+    btnGroup.appendChild(editBtn); btnGroup.appendChild(delBtn);
+    li.appendChild(span); li.appendChild(btnGroup);
+    list.appendChild(li);
+  });
+}
+crudRender();
+</script>
+</body>
+</html>

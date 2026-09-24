@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an image slideshow/carousel using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.slider { height: 140px; border-radius: 10px; overflow: hidden; } .slide { height: 100%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; font-weight: 700; transition: background 0.3s ease; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>170. Create an image slideshow/carousel using JavaScript</h1>
+      <p class="description">A basic carousel that cycles through slides using next/previous buttons and array index tracking.</p>
+      <div class="demo-area">
+<div class="slider" id="slider"><div class="slide" style="background:#2e5aac;">Slide 1</div></div><div class="row" style="justify-content:center; margin-top:10px;"><button onclick="changeSlide(-1)">Previous</button><button onclick="changeSlide(1)">Next</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 170 of 425</footer>
+<script>
+const slides = [
+  { color: '#2e5aac', text: 'Slide 1' },
+  { color: '#ff7a45', text: 'Slide 2' },
+  { color: '#1e8449', text: 'Slide 3' },
+  { color: '#1f3864', text: 'Slide 4' }
+];
+let currentSlide = 0;
+function renderSlide() {
+  const slideEl = document.querySelector('.slide');
+  slideEl.style.background = slides[currentSlide].color;
+  slideEl.textContent = slides[currentSlide].text;
+}
+function changeSlide(direction) {
+  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+  renderSlide();
+}
+</script>
+</body>
+</html>

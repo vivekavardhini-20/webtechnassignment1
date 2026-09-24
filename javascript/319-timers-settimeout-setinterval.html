@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a program using setInterval()</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>319. Create a program using setInterval()</h1>
+      <p class="description">Demonstrates the difference between a one-time delayed action (setTimeout) and a repeating action (setInterval), including clearing them.</p>
+      <div class="demo-area">
+<button onclick="runTimeout()">Run setTimeout (2s delay)</button><button onclick="toggleInterval()">Start/Stop setInterval (every 1s)</button><pre id="timerLog"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 319 of 425</footer>
+<script>
+const log = document.getElementById('timerLog');
+function runTimeout() {
+  log.textContent = 'Waiting 2 seconds...';
+  setTimeout(() => { log.textContent = 'setTimeout fired once after 2 seconds!'; }, 2000);
+}
+let intervalId = null, tickCount = 0;
+function toggleInterval() {
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+    log.textContent += '\nsetInterval stopped.';
+  } else {
+    tickCount = 0;
+    intervalId = setInterval(() => {
+      tickCount++;
+      log.textContent = `setInterval tick #${tickCount}`;
+    }, 1000);
+  }
+}
+</script>
+</body>
+</html>

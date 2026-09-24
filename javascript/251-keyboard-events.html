@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate keyboard events using keydown</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>251. Demonstrate keyboard events using keydown</h1>
+      <p class="description">Demonstrates capturing and displaying keyboard event details such as key name and key code.</p>
+      <div class="demo-area">
+<input type="text" id="kbInput" placeholder="Type something..."><pre id="kbOutput">Key info will appear here.</pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 251 of 425</footer>
+<script>
+document.getElementById('kbInput').addEventListener('keydown', (e) => {
+  document.getElementById('kbOutput').textContent =
+`key: ${e.key}
+code: ${e.code}
+shiftKey: ${e.shiftKey}
+ctrlKey: ${e.ctrlKey}
+altKey: ${e.altKey}`;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a Node.js application using built-in modules</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>364. Create a Node.js application using built-in modules</h1>
+      <p class="description">Demonstrates using several of Node's built-in modules together: os, path and fs.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const os = require(&#x27;os&#x27;);
+const path = require(&#x27;path&#x27;);
+
+console.log(&#x27;Platform:&#x27;, os.platform());
+console.log(&#x27;Free memory (MB):&#x27;, Math.round(os.freemem() / 1024 / 1024));
+console.log(&#x27;CPU cores:&#x27;, os.cpus().length);
+
+const filePath = &#x27;/project/src/app.js&#x27;;
+console.log(&#x27;File name:&#x27;, path.basename(filePath));
+console.log(&#x27;Directory:&#x27;, path.dirname(filePath));
+console.log(&#x27;Extension:&#x27;, path.extname(filePath));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 364 of 425</footer>
+
+</body>
+</html>

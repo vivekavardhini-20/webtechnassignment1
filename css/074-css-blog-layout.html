@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a news/blog webpage layout using CSS Grid</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.blog-layout { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 10px; } .blog-featured { grid-row: span 2; background: var(--navy); color: #fff; padding: 20px; border-radius: 10px; } .blog-item { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; align-items: center; justify-content: center; font-weight: 600; } @media (max-width: 480px) { .blog-layout { grid-template-columns: 1fr; } .blog-featured { grid-row: auto; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>74. Create a news/blog webpage layout using CSS Grid</h1>
+      <p class="description">A blog homepage layout with a featured post and a grid of smaller article cards, built with CSS Grid.</p>
+      <div class="demo-area">
+<div class="blog-layout"><div class="blog-featured"><h3>Featured: The Future of Web Development</h3><p>An in-depth look at where front-end tooling is headed next.</p></div><div class="blog-item">Article Two</div><div class="blog-item">Article Three</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 74 of 425</footer>
+
+</body>
+</html>

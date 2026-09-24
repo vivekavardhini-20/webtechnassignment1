@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a User REST API with Authentication and Authorization</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>425. Create a User REST API with Authentication and Authorization</h1>
+      <p class="description">A complete REST API combining JWT authentication and role-based authorization to fully protect user-management endpoints.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const express = require(&#x27;express&#x27;);
+const jwt = require(&#x27;jsonwebtoken&#x27;);
+const app = express();
+app.use(express.json());
+const SECRET_KEY = &#x27;my-jwt-secret&#x27;;
+
+function verifyToken(req, res, next) {
+  const token = req.headers.authorization?.split(&#x27; &#x27;)[1];
+  if (!token) return res.status(401).json({ error: &#x27;No token&#x27; });
+  jwt.verify(token, SECRET_KEY, (err, decoded) =&gt; {
+    if (err) return res.status(403).json({ error: &#x27;Invalid token&#x27; });
+    req.user = decoded; next();
+  });
+}
+function requireAdmin(req, res, next) {
+  if (req.user.role !== &#x27;admin&#x27;) return res.status(403).json({ error: &#x27;Admins only&#x27; });
+  next();
+}
+
+app.get(&#x27;/api/users&#x27;, verifyToken, requireAdmin, async (req, res) =&gt; res.json(await User.find()));
+app.get(&#x27;/api/users/me&#x27;, verifyToken, (req, res) =&gt; res.json({ username: req.user.username }));
+
+app.listen(3000, () =&gt; console.log(&#x27;User REST API (auth + authz) running on port 3000&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 425 of 425</footer>
+
+</body>
+</html>

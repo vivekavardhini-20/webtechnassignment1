@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a shopping cart using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>347. Create a shopping cart using localStorage</h1>
+      <p class="description">A shopping cart that persists its contents to localStorage, so items remain after a page refresh.</p>
+      <div class="demo-area">
+<div class="row"><button onclick="addPersistCartItem('T-Shirt', 499)">Add T-Shirt</button><button onclick="addPersistCartItem('Shoes', 2499)">Add Shoes</button></div><pre id="persistCartOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 347 of 425</footer>
+<script>
+function getPersistCart() { return JSON.parse(localStorage.getItem('persistentCart') || '[]'); }
+function addPersistCartItem(name, price) {
+  const cart = getPersistCart();
+  cart.push({ name, price });
+  localStorage.setItem('persistentCart', JSON.stringify(cart));
+  renderPersistCart();
+}
+function renderPersistCart() {
+  const cart = getPersistCart();
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  document.getElementById('persistCartOut').textContent = `Cart (persists after refresh):\n${JSON.stringify(cart, null, 2)}\nTotal: ₹${total}`;
+}
+renderPersistCart();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using CSS Grid template areas</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.layout-grid { display: grid; grid-template-areas: "header header" "sidebar main" "footer footer"; grid-template-columns: 120px 1fr; grid-template-rows: 50px 100px 40px; gap: 8px; } .area-header { grid-area: header; background: var(--navy); } .area-sidebar { grid-area: sidebar; background: var(--blue); } .area-main { grid-area: main; background: var(--accent); } .area-footer { grid-area: footer; background: var(--navy); } .layout-grid > div { color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: 700; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>76. Create a webpage using CSS Grid template areas</h1>
+      <p class="description">Demonstrates a full page layout defined with grid-template-areas for header, sidebar, main and footer.</p>
+      <div class="demo-area">
+<div class="layout-grid"><div class="area-header">Header</div><div class="area-sidebar">Sidebar</div><div class="area-main">Main Content</div><div class="area-footer">Footer</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 76 of 425</footer>
+
+</body>
+</html>

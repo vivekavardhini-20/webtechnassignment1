@@ -1,0 +1,157 @@
+/* ==========================================================
+   Shared Stylesheet - HTML CSS JavaScript Practical Programs
+   ========================================================== */
+
+:root {
+  --navy: #1f3864;
+  --blue: #2e5aac;
+  --light-blue: #eaf1fb;
+  --accent: #ff7a45;
+  --text: #26313d;
+  --muted: #5b6b79;
+  --card-bg: #ffffff;
+  --page-bg: #f4f7fb;
+  --border: #dbe4f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header.site-header {
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: #fff;
+  padding: 26px 20px;
+  text-align: center;
+}
+
+header.site-header h1 { margin: 0 0 6px; font-size: 1.7rem; letter-spacing: 0.5px; }
+header.site-header p { margin: 0; opacity: 0.9; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 30px 20px 60px; }
+
+/* Dashboard cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(31, 56, 100, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(31, 56, 100, 0.12); }
+.card h2 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
+.card p { color: var(--muted); min-height: 42px; }
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.btn:hover { background: var(--navy); }
+
+/* Program listing pages */
+.category-heading {
+  color: var(--navy);
+  margin: 30px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+.program-list { list-style: none; padding: 0; counter-reset: prog; }
+.program-list li {
+  counter-increment: prog;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 12px 18px;
+}
+.program-list li a { color: var(--navy); text-decoration: none; font-weight: 600; }
+.program-list li::before { content: counter(prog) ". "; color: var(--accent); font-weight: 700; }
+.program-list li a:hover { text-decoration: underline; }
+
+.search-box {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Individual program pages */
+.program-page { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 26px; margin-top: 10px; }
+.program-page h1 { color: var(--navy); margin-top: 0; font-size: 1.4rem; }
+.description { background: var(--light-blue); border-left: 4px solid var(--blue); padding: 10px 16px; border-radius: 6px; color: var(--muted); margin-bottom: 20px; }
+.demo-area { border: 1px dashed var(--border); border-radius: 10px; padding: 20px; margin: 18px 0; background: #fbfcfe; overflow-x: auto; }
+
+.nav-links { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+.nav-links a { padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; background: var(--navy); color: #fff; }
+.nav-links a.secondary { background: var(--light-blue); color: var(--navy); }
+
+footer { text-align: center; color: var(--muted); padding: 20px; font-size: 0.85rem; }
+
+/* Generic form styling used in several demos */
+.demo-form label { display: block; margin-top: 12px; font-weight: 600; color: var(--text); }
+.demo-form input, .demo-form select, .demo-form textarea {
+  width: 100%; padding: 9px 10px; margin-top: 4px; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem;
+}
+.demo-form button, .demo-area button {
+  margin-top: 16px; padding: 9px 20px; background: var(--accent); border: none; color: #fff; border-radius: 6px; font-weight: 600; cursor: pointer;
+}
+.demo-form button:hover, .demo-area button:hover { opacity: 0.9; }
+
+.error-text { color: #c0392b; font-size: 0.85rem; }
+.success-text { color: #1e8449; font-weight: 600; }
+
+/* Generic helpers reused across many JS/CSS demo pages */
+.demo-area pre {
+  background: var(--light-blue); padding: 12px; border-radius: 8px;
+  white-space: pre-wrap; word-break: break-word;
+  font-family: Consolas, "Courier New", monospace; font-size: 0.9rem;
+}
+.demo-area .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.demo-area .box {
+  padding: 16px; border-radius: 8px; background: var(--light-blue);
+  text-align: center; font-weight: 700; color: var(--navy);
+}
+.demo-area button {
+  padding: 9px 18px; background: var(--blue); border: none; color: #fff;
+  border-radius: 6px; font-weight: 600; cursor: pointer;
+}
+.demo-area button:hover { background: var(--navy); }
+.demo-area input[type="text"], .demo-area input[type="number"], .demo-area input[type="email"] {
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem;
+}
+.swatch { display: inline-block; width: 40px; height: 40px; border-radius: 6px; border: 1px solid var(--border); vertical-align: middle; }
+
+/* Node.js code-reference pages */
+.node-note {
+  background: #fff3cd; border-left: 4px solid #d68910; padding: 10px 16px; border-radius: 6px;
+  font-size: 0.9rem; margin-bottom: 14px; color: #6b4e00;
+}
+pre.code-block {
+  background: #1e2530; color: #e8edf3; padding: 18px; border-radius: 8px; overflow-x: auto;
+  font-family: Consolas, "Courier New", monospace; font-size: 0.88rem; white-space: pre;
+}
+.category-heading { color: var(--navy); margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+.search-box { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; margin-bottom: 10px; }

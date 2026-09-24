@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to count vowels and consonants in a string</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>151. Write a program to count vowels and consonants in a string</h1>
+      <p class="description">Loops through each character and classifies it as a vowel, consonant, or other.</p>
+      <div class="demo-area">
+<input type="text" id="vcInput" value="JavaScript Programming"><button onclick="countVowelsConsonants()">Count</button><div class="box" id="vcOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 151 of 425</footer>
+<script>
+function countVowelsConsonants() {
+  const str = document.getElementById('vcInput').value.toLowerCase();
+  let vowels = 0, consonants = 0;
+  for (const ch of str) {
+    if (/[a-z]/.test(ch)) { 'aeiou'.includes(ch) ? vowels++ : consonants++; }
+  }
+  document.getElementById('vcOut').textContent = `Vowels: ${vowels} | Consonants: ${consonants}`;
+}
+countVowelsConsonants();
+</script>
+</body>
+</html>

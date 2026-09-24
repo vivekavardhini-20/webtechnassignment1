@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add new rows to an HTML table dynamically</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#rowsTable { width: 100%; border-collapse: collapse; } #rowsTable th, #rowsTable td { border: 1px solid var(--border); padding: 8px; } #rowsTable th { background: var(--navy); color: #fff; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>224. Add new rows to an HTML table dynamically</h1>
+      <p class="description">Demonstrates dynamically inserting and removing rows in an HTML table using JavaScript.</p>
+      <div class="demo-area">
+<table id="rowsTable"><thead><tr><th>Name</th><th>Action</th></tr></thead><tbody></tbody></table><div class="row"><input type="text" id="rowNameInput" placeholder="Enter name"><button onclick="addRow()">Add Row</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 224 of 425</footer>
+<script>
+function addRow() {
+  const name = document.getElementById('rowNameInput').value.trim();
+  if (!name) return;
+  const tbody = document.querySelector('#rowsTable tbody');
+  const row = tbody.insertRow();
+  row.insertCell(0).textContent = name;
+  const actionCell = row.insertCell(1);
+  const delBtn = document.createElement('button');
+  delBtn.textContent = 'Delete';
+  delBtn.onclick = () => row.remove();
+  actionCell.appendChild(delBtn);
+  document.getElementById('rowNameInput').value = '';
+}
+</script>
+</body>
+</html>

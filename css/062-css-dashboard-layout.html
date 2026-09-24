@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a dashboard layout using CSS Grid</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.dash-grid { display: grid; grid-template-areas: "side top" "side main"; grid-template-columns: 100px 1fr; grid-template-rows: 44px 140px; gap: 8px; } .dash-side { grid-area: side; background: var(--navy); color: #fff; padding: 10px; border-radius: 8px; } .dash-top { grid-area: top; background: var(--light-blue); border-radius: 8px; padding: 10px; } .dash-main { grid-area: main; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>62. Create a dashboard layout using CSS Grid</h1>
+      <p class="description">A responsive admin-dashboard layout with a sidebar, top bar and main content area, built with CSS Grid template areas.</p>
+      <div class="demo-area">
+<div class="dash-grid"><div class="dash-side">Sidebar</div><div class="dash-top">Top Bar</div><div class="dash-main">Main Dashboard Content</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 62 of 425</footer>
+
+</body>
+</html>

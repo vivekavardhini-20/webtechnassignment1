@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a shopping order form and calculate the total price</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>313. Create a shopping order form and calculate the total price</h1>
+      <p class="description">Calculates the total price of an order based on quantity, unit price and a flat shipping fee.</p>
+      <div class="demo-area">
+<div class="demo-form"><label>Quantity</label><input type="number" id="orderQty" value="3" min="1"><label>Unit Price (₹)</label><input type="number" id="orderPrice" value="250"><label>Shipping (₹)</label><input type="number" id="orderShipping" value="50"><button onclick="calculateOrderTotal()">Calculate Total</button></div><div class="box" id="orderTotalOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 313 of 425</footer>
+<script>
+function calculateOrderTotal() {
+  const qty = parseInt(document.getElementById('orderQty').value, 10) || 0;
+  const price = parseFloat(document.getElementById('orderPrice').value) || 0;
+  const shipping = parseFloat(document.getElementById('orderShipping').value) || 0;
+  const total = qty * price + shipping;
+  document.getElementById('orderTotalOut').textContent = `Order total: ₹${total.toFixed(2)}`;
+}
+calculateOrderTotal();
+</script>
+</body>
+</html>

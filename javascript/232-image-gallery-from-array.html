@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an image gallery dynamically from an array of image data</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>232. Create an image gallery dynamically from an array of image data</h1>
+      <p class="description">Demonstrates rendering a gallery of items from a JavaScript array of objects (using colored boxes as image stand-ins).</p>
+      <div class="demo-area">
+<div id="galleryContainer" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 232 of 425</footer>
+<script>
+const galleryData = [
+  { color: '#2e5aac', label: 'Photo 1' },
+  { color: '#ff7a45', label: 'Photo 2' },
+  { color: '#1e8449', label: 'Photo 3' },
+  { color: '#1f3864', label: 'Photo 4' }
+];
+const galleryContainer = document.getElementById('galleryContainer');
+galleryData.forEach(item => {
+  const div = document.createElement('div');
+  div.style.cssText = `width:80px; height:80px; background:${item.color}; color:#fff; display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:0.8rem; text-align:center;`;
+  div.textContent = item.label;
+  galleryContainer.appendChild(div);
+});
+</script>
+</body>
+</html>

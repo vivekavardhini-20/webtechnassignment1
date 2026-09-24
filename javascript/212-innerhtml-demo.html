@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change the HTML content of an element using innerHTML</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>212. Change the HTML content of an element using innerHTML</h1>
+      <p class="description">Demonstrates replacing an element's inner HTML markup (not just text) using the innerHTML property.</p>
+      <div class="demo-area">
+<div id="innerHtmlTarget" class="box">Original content</div><button onclick="changeInnerHTML()">Change innerHTML</button>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 212 of 425</footer>
+<script>
+function changeInnerHTML() { document.getElementById('innerHtmlTarget').innerHTML = '<strong style="color:var(--accent);">Bold, styled HTML content!</strong>'; }
+</script>
+</body>
+</html>

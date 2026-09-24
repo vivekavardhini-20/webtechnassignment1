@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an HTML page demonstrating semantic elements such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, and &lt;footer&gt;</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.layout-demo article { border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+.layout-demo aside { background: var(--light-blue); border-radius: 8px; padding: 14px; }
+.layout-demo nav a { margin-right: 12px; color: var(--navy); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>HTML Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>8. Create an HTML page demonstrating semantic elements such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, and &lt;footer&gt;</h1>
+      <p class="description">Demonstrates semantic elements: header, nav, main, section, article, aside and footer.</p>
+      <div class="demo-area">
+<div class="layout-demo">
+  <header><strong>Site Header</strong> - logo and title area</header>
+  <nav style="margin:10px 0;"><a href="#">Home</a> <a href="#">Blog</a> <a href="#">Contact</a></nav>
+  <section>
+    <h3>Blog Section</h3>
+    <article><h4>Article 1: What is Semantic HTML?</h4><p>Semantic tags describe their meaning to browser and developer.</p></article>
+    <article><h4>Article 2: Why it matters for accessibility</h4><p>Screen readers use semantic structure to navigate a page.</p></article>
+  </section>
+  <aside><strong>Sidebar</strong><p>Related links go here, marked with aside.</p></aside>
+  <footer style="margin-top:10px; border-top:1px solid var(--border); padding-top:10px;">Page Footer</footer>
+</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to HTML Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>HTML Programs &mdash; Question 8 of 425</footer>
+
+</body>
+</html>

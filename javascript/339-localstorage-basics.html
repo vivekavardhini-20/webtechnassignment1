@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete an item from localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>339. Delete an item from localStorage</h1>
+      <p class="description">Demonstrates saving, reading and clearing data with localStorage, which persists even after the browser closes.</p>
+      <div class="demo-area">
+<input type="text" id="localInput" placeholder="Enter a value"><div class="row"><button onclick="saveLocal()">Save</button><button onclick="clearLocalDemo()">Clear</button></div><p>Stored value: <strong id="localValue">(none)</strong></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 339 of 425</footer>
+<script>
+function saveLocal() { localStorage.setItem('practicalDemoValue', document.getElementById('localInput').value); loadLocalValue(); }
+function clearLocalDemo() { localStorage.removeItem('practicalDemoValue'); loadLocalValue(); }
+function loadLocalValue() { document.getElementById('localValue').textContent = localStorage.getItem('practicalDemoValue') || '(none)'; }
+loadLocalValue();
+</script>
+</body>
+</html>

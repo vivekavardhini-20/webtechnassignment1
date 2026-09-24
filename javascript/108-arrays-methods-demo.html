@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program demonstrating arrays and array methods</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>108. Write a program demonstrating arrays and array methods</h1>
+      <p class="description">Demonstrates push, pop, shift, unshift and slice on an array.</p>
+      <div class="demo-area">
+<pre id="arraysDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 108 of 425</footer>
+<script>
+let arr = [10, 20, 30];
+let log = `Start: [${arr.join(', ')}]\n`;
+arr.push(40); log += `after push(40): [${arr.join(', ')}]\n`;
+arr.pop(); log += `after pop(): [${arr.join(', ')}]\n`;
+arr.unshift(5); log += `after unshift(5): [${arr.join(', ')}]\n`;
+arr.shift(); log += `after shift(): [${arr.join(', ')}]\n`;
+log += `slice(1,3): [${arr.slice(1,3).join(', ')}]`;
+document.getElementById('arraysDemoOut').textContent = log;
+</script>
+</body>
+</html>

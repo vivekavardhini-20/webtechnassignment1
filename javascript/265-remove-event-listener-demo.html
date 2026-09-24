@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove an event listener using removeEventListener()</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>265. Remove an event listener using removeEventListener()</h1>
+      <p class="description">Demonstrates attaching a listener and then removing it, so subsequent clicks no longer trigger it.</p>
+      <div class="demo-area">
+<button id="removableBtn">Click me (active)</button><button onclick="removeTheListener()">Remove Listener</button><p id="removeListenerOut"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 265 of 425</footer>
+<script>
+function handleRemovableClick() { document.getElementById('removeListenerOut').textContent = 'Clicked at ' + new Date().toLocaleTimeString(); }
+document.getElementById('removableBtn').addEventListener('click', handleRemovableClick);
+function removeTheListener() {
+  document.getElementById('removableBtn').removeEventListener('click', handleRemovableClick);
+  document.getElementById('removeListenerOut').textContent = 'Listener removed - clicking the button now does nothing.';
+}
+</script>
+</body>
+</html>

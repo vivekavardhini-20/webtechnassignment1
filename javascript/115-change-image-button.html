@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a program to change an image when a button is clicked</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>115. Create a program to change an image when a button is clicked</h1>
+      <p class="description">Demonstrates swapping displayed content (represented by a colored box standing in for an image) when a button is clicked.</p>
+      <div class="demo-area">
+<div class="box" id="imageChangeTarget" style="height:80px; background:#2e5aac;">Image 1</div><button onclick="changeDisplayedImage()">Next Image</button>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 115 of 425</footer>
+<script>
+const imageSet = [{ color: '#2e5aac', label: 'Image 1' }, { color: '#ff7a45', label: 'Image 2' }, { color: '#1e8449', label: 'Image 3' }];
+let imageIndex = 0;
+function changeDisplayedImage() {
+  imageIndex = (imageIndex + 1) % imageSet.length;
+  const target = document.getElementById('imageChangeTarget');
+  target.style.background = imageSet[imageIndex].color;
+  target.textContent = imageSet[imageIndex].label;
+}
+</script>
+</body>
+</html>

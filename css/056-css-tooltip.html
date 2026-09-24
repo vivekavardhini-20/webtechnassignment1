@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a tooltip using CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.tooltip-trigger { position: relative; background: var(--light-blue); padding: 8px 14px; border-radius: 6px; cursor: help; } .tooltip-trigger::after { content: attr(data-tip); position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 6px 10px; border-radius: 6px; font-size: 0.8rem; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; } .tooltip-trigger:hover::after { opacity: 1; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>56. Create a tooltip using CSS</h1>
+      <p class="description">A hover-triggered tooltip built entirely with CSS using ::after and the attr() function.</p>
+      <div class="demo-area">
+<span class="tooltip-trigger" data-tip="This is a pure CSS tooltip!">Hover over me</span>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 56 of 425</footer>
+
+</body>
+</html>

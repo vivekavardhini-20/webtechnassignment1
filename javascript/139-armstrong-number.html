@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to check whether a number is an Armstrong number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>139. Write a program to check whether a number is an Armstrong number</h1>
+      <p class="description">Checks if a number equals the sum of its own digits each raised to the power of the digit count.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="armInput" value="153"><button onclick="checkArmstrong()">Check</button></div><div class="box" id="armOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 139 of 425</footer>
+<script>
+function checkArmstrong() {
+  const numStr = document.getElementById('armInput').value.trim();
+  const digits = numStr.split('');
+  const power = digits.length;
+  const sum = digits.reduce((acc, d) => acc + Math.pow(Number(d), power), 0);
+  document.getElementById('armOut').textContent = numStr + ' is ' + (sum === Number(numStr) ? 'an Armstrong number' : 'NOT an Armstrong number');
+}
+checkArmstrong();
+</script>
+</body>
+</html>

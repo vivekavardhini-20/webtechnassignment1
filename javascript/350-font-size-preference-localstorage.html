@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save the user's preferred font size using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>350. Save the user's preferred font size using localStorage</h1>
+      <p class="description">Demonstrates persisting a UI preference (font size) so it's remembered on the next visit.</p>
+      <div class="demo-area">
+<p id="fontPrefText" style="transition:font-size 0.2s ease;">Sample text that resizes.</p><div class="row"><button onclick="changeFontPref(-2)">A-</button><button onclick="changeFontPref(2)">A+</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 350 of 425</footer>
+<script>
+function applyFontPref() {
+  const saved = localStorage.getItem('preferredFontSize') || '16';
+  document.getElementById('fontPrefText').style.fontSize = saved + 'px';
+}
+function changeFontPref(delta) {
+  const current = parseInt(localStorage.getItem('preferredFontSize') || '16', 10);
+  const updated = Math.max(10, current + delta);
+  localStorage.setItem('preferredFontSize', updated);
+  applyFontPref();
+}
+applyFontPref();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a two-column webpage layout using CSS Grid</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.two-col { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; } .two-col-main { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; } .two-col-side { background: var(--light-blue); border-radius: 8px; padding: 20px; } @media (max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>63. Create a two-column webpage layout using CSS Grid</h1>
+      <p class="description">A classic two-column page layout (main content + sidebar) built with CSS Grid.</p>
+      <div class="demo-area">
+<div class="two-col"><div class="two-col-main">Main Content Area</div><div class="two-col-side">Sidebar</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 63 of 425</footer>
+
+</body>
+</html>

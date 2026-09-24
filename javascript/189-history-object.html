@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate the History object</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>189. Demonstrate the History object</h1>
+      <p class="description">Demonstrates navigating browser session history programmatically using history.back(), forward() and length.</p>
+      <div class="demo-area">
+<pre id="historyInfo"></pre><div class="row"><button onclick="history.back()">Go Back</button><button onclick="history.forward()">Go Forward</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 189 of 425</footer>
+<script>
+document.getElementById('historyInfo').textContent = `history.length (entries in this tab session): ${history.length}`;
+</script>
+</body>
+</html>

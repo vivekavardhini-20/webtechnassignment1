@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a responsive webpage using CSS media queries</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.mq-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; } .mq-grid > div { background: var(--blue); color: #fff; padding: 20px; text-align: center; border-radius: 6px; } @media (max-width: 768px) { .mq-grid { grid-template-columns: repeat(2, 1fr); } } @media (max-width: 480px) { .mq-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>31. Create a responsive webpage using CSS media queries</h1>
+      <p class="description">Demonstrates changing a layout's column count at different screen widths using @media breakpoints.</p>
+      <div class="demo-area">
+<div class="mq-grid"><div>1</div><div>2</div><div>3</div><div>4</div></div><p class="mq-status" style="margin-top:10px; font-weight:700; color:var(--accent);">Resize the window to see the layout change.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 31 of 425</footer>
+
+</body>
+</html>

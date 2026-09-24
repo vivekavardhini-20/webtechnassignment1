@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate an age field using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>279. Validate an age field using JavaScript</h1>
+      <p class="description">Demonstrates checking that an age input is a realistic whole number within a sensible range.</p>
+      <div class="demo-area">
+<input type="number" id="ageFieldInput" placeholder="Enter age" oninput="validateAgeField()"><p id="ageFieldOut" class="error-text"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 279 of 425</footer>
+<script>
+function validateAgeField() {
+  const age = Number(document.getElementById('ageFieldInput').value);
+  const out = document.getElementById('ageFieldOut');
+  if (age < 1 || age > 120 || !Number.isInteger(age)) { out.textContent = 'Please enter a valid age (1-120).'; }
+  else { out.textContent = ''; }
+}
+</script>
+</body>
+</html>

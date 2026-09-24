@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a student marks database using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>359. Create a student marks database using localStorage</h1>
+      <p class="description">A small student-records manager that persists a list of student records to localStorage as JSON.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="srName" placeholder="Name"><input type="number" id="srMarks" placeholder="Marks"><button onclick="addStudentRecord()">Add Record</button></div><pre id="srOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 359 of 425</footer>
+<script>
+function getStudentRecords() { return JSON.parse(localStorage.getItem('studentRecords') || '[]'); }
+function addStudentRecord() {
+  const name = document.getElementById('srName').value.trim();
+  const marks = document.getElementById('srMarks').value;
+  if (!name) return;
+  const records = getStudentRecords();
+  records.push({ name, marks });
+  localStorage.setItem('studentRecords', JSON.stringify(records));
+  renderStudentRecords();
+}
+function renderStudentRecords() { document.getElementById('srOutput').textContent = JSON.stringify(getStudentRecords(), null, 2); }
+renderStudentRecords();
+</script>
+</body>
+</html>

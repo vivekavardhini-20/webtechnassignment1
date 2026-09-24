@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Implement a POST REST API</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>416. Implement a POST REST API</h1>
+      <p class="description">Demonstrates a POST endpoint that creates a new resource from the request body.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">app.post(&#x27;/api/students&#x27;, (req, res) =&gt; {
+  const { name, course, cgpa } = req.body;
+  if (!name) return res.status(400).json({ error: &#x27;Name is required&#x27; });
+  const newStudent = { id: Date.now(), name, course, cgpa };
+  students.push(newStudent);
+  res.status(201).json(newStudent); // 201 = Created
+});</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 416 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an online shopping webpage using CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; } .shop-item { background: #fff; border-radius: 10px; padding: 16px 10px; text-align: center; font-size: 2rem; box-shadow: 0 2px 8px rgba(31,56,100,0.08); } .shop-item p { font-size: 0.85rem; margin-top: 8px; color: var(--text); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>72. Create an online shopping webpage using CSS</h1>
+      <p class="description">A mini e-commerce product grid section with multiple product cards using CSS Grid.</p>
+      <div class="demo-area">
+<div class="shop-grid"><div class="shop-item">👕<p>T-Shirt<br><b>₹499</b></p></div><div class="shop-item">👟<p>Sneakers<br><b>₹2,499</b></p></div><div class="shop-item">🎒<p>Backpack<br><b>₹1,299</b></p></div><div class="shop-item">⌚<p>Watch<br><b>₹3,999</b></p></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 72 of 425</footer>
+
+</body>
+</html>

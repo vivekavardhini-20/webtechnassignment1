@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate querySelector() and querySelectorAll()</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>161. Demonstrate querySelector() and querySelectorAll()</h1>
+      <p class="description">Demonstrates the modern CSS-selector-based DOM query methods.</p>
+      <div class="demo-area">
+<p class="qs-target">Paragraph 1</p><p class="qs-target">Paragraph 2</p><button onclick="runQuerySelectorDemo()">Run Query</button><pre id="qsOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 161 of 425</footer>
+<script>
+function runQuerySelectorDemo() {
+  const first = document.querySelector('.qs-target'); // only the FIRST match
+  const all = document.querySelectorAll('.qs-target'); // ALL matches (NodeList)
+  document.getElementById('qsOutput').textContent =
+`querySelector('.qs-target') found: "${first.textContent}"
+querySelectorAll('.qs-target') found ${all.length} elements`;
+}
+</script>
+</body>
+</html>

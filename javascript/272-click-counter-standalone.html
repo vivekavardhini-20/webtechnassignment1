@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a click counter</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>272. Create a click counter</h1>
+      <p class="description">A simple counter that increments every time a button is clicked.</p>
+      <div class="demo-area">
+<button onclick="incrementClickCounter()">Click Me</button><p id="clickCounterOut" style="font-weight:700;">Clicks: 0</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 272 of 425</footer>
+<script>
+let standaloneClickCount = 0; function incrementClickCounter() { standaloneClickCount++; document.getElementById('clickCounterOut').textContent = 'Clicks: ' + standaloneClickCount; }
+</script>
+</body>
+</html>

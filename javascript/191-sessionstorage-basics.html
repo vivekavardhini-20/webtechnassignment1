@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a program using sessionStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>191. Create a program using sessionStorage</h1>
+      <p class="description">Demonstrates saving and reading data with sessionStorage, which only persists for the current browser tab session.</p>
+      <div class="demo-area">
+<input type="text" id="sessionInput" placeholder="Enter a value"><div class="row"><button onclick="saveSession()">Save</button><button onclick="clearSessionDemo()">Clear</button></div><p>Stored value: <strong id="sessionValue">(none)</strong></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 191 of 425</footer>
+<script>
+function saveSession() { sessionStorage.setItem('practicalSessionValue', document.getElementById('sessionInput').value); loadSessionValue(); }
+function clearSessionDemo() { sessionStorage.removeItem('practicalSessionValue'); loadSessionValue(); }
+function loadSessionValue() { document.getElementById('sessionValue').textContent = sessionStorage.getItem('practicalSessionValue') || '(none)'; }
+loadSessionValue();
+</script>
+</body>
+</html>

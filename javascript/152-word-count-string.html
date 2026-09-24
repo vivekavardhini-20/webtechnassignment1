@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to count the number of words in a string</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>152. Write a program to count the number of words in a string</h1>
+      <p class="description">Splits the string on whitespace and counts the resulting parts.</p>
+      <div class="demo-area">
+<input type="text" id="wordCountInput" value="JavaScript is a versatile programming language"><button onclick="countWords()">Count Words</button><div class="box" id="wordCountOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 152 of 425</footer>
+<script>
+function countWords() {
+  const str = document.getElementById('wordCountInput').value.trim();
+  const words = str === '' ? [] : str.split(/\s+/);
+  document.getElementById('wordCountOut').textContent = `Word count: ${words.length}`;
+}
+countWords();
+</script>
+</body>
+</html>

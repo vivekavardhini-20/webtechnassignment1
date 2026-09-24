@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a JavaScript program to perform arithmetic operations</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>92. Write a JavaScript program to perform arithmetic operations</h1>
+      <p class="description">Demonstrates the basic arithmetic operators: +, -, *, /, % (modulus) and ** (exponent).</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="numA" value="12"><input type="number" id="numB" value="5"><button onclick="runArithmetic()">Calculate</button></div><pre id="arithOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 92 of 425</footer>
+<script>
+function runArithmetic() {
+  const a = parseFloat(document.getElementById('numA').value);
+  const b = parseFloat(document.getElementById('numB').value);
+  document.getElementById('arithOut').textContent =
+`a + b = ${a + b}
+a - b = ${a - b}
+a * b = ${a * b}
+a / b = ${(a / b).toFixed(2)}
+a % b = ${a % b}
+a ** b = ${a ** b}`;
+}
+runArithmetic();
+</script>
+</body>
+</html>

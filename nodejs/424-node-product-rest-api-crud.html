@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a Product REST API with CRUD Operations</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>424. Create a Product REST API with CRUD Operations</h1>
+      <p class="description">A complete REST API for e-commerce products, backed by a database, demonstrating a real-world CRUD resource.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const express = require(&#x27;express&#x27;);
+const Product = require(&#x27;./models/Product&#x27;);
+const app = express();
+app.use(express.json());
+
+app.get(&#x27;/api/products&#x27;, async (req, res) =&gt; res.json(await Product.find()));
+app.post(&#x27;/api/products&#x27;, async (req, res) =&gt; res.status(201).json(await Product.create(req.body)));
+app.put(&#x27;/api/products/:id&#x27;, async (req, res) =&gt;
+  res.json(await Product.findByIdAndUpdate(req.params.id, req.body, { new: true })));
+app.delete(&#x27;/api/products/:id&#x27;, async (req, res) =&gt; {
+  await Product.findByIdAndDelete(req.params.id);
+  res.status(204).send();
+});
+
+app.listen(3000, () =&gt; console.log(&#x27;Product REST API running on port 3000&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 424 of 425</footer>
+
+</body>
+</html>

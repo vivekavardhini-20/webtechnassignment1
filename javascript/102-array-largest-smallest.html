@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the largest and smallest element in an array</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>102. Write a program to find the largest and smallest element in an array</h1>
+      <p class="description">Uses Math.max()/Math.min() with the spread operator to find array extremes.</p>
+      <div class="demo-area">
+<input type="text" id="arrExtremeInput" value="45, 3, 89, 12, 67"><button onclick="findExtremes()">Find</button><pre id="arrExtremeOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 102 of 425</footer>
+<script>
+function findExtremes() {
+  const arr = document.getElementById('arrExtremeInput').value.split(',').map(Number);
+  document.getElementById('arrExtremeOut').textContent = `Array: [${arr.join(', ')}]\nLargest: ${Math.max(...arr)}\nSmallest: ${Math.min(...arr)}`;
+}
+findExtremes();
+</script>
+</body>
+</html>

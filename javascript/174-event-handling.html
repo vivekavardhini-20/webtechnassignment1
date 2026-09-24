@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage that responds to double-click events</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>174. Create a webpage that responds to double-click events</h1>
+      <p class="description">Demonstrates attaching multiple types of event listeners using addEventListener.</p>
+      <div class="demo-area">
+<h4>Click Event</h4>
+<button onclick="handleClick()">Click me</button>
+<p>Clicked <span id="clickCounter">0</span> times.</p>
+<h4>Mouseover / Mouseout Events</h4>
+<div id="hoverBox" class="box">Move your mouse over this box</div>
+<h4>Keydown Event</h4>
+<input type="text" id="keyInput" placeholder="Type here...">
+<div id="keyBox" style="margin-top:8px;">Last key pressed: <strong id="lastKey">none</strong></div>
+<h4>Double-click Event</h4>
+<div id="dblBox" class="box" style="cursor:pointer;">Double-click me</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 174 of 425</footer>
+<script>
+let clickCount = 0;
+const clickCounterEl = document.getElementById('clickCounter');
+function handleClick() { clickCount++; clickCounterEl.textContent = clickCount; }
+const hoverBox = document.getElementById('hoverBox');
+hoverBox.addEventListener('mouseover', () => { hoverBox.style.background = '#caffbf'; hoverBox.textContent = 'Mouse is over the box!'; });
+hoverBox.addEventListener('mouseout', () => { hoverBox.style.background = ''; hoverBox.textContent = 'Move your mouse over this box'; });
+document.getElementById('keyInput').addEventListener('keydown', (e) => { document.getElementById('lastKey').textContent = e.key; });
+const dblBox = document.getElementById('dblBox');
+dblBox.addEventListener('dblclick', () => {
+  dblBox.textContent = 'Double-clicked!';
+  setTimeout(() => { dblBox.textContent = 'Double-click me'; }, 1200);
+});
+</script>
+</body>
+</html>

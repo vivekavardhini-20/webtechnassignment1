@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a BMI calculator</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>208. Create a BMI calculator</h1>
+      <p class="description">Calculates Body Mass Index from height and weight input, and classifies the result into a BMI category.</p>
+      <div class="demo-area">
+<div class="demo-form"><label for="weightKg">Weight (kg)</label><input type="number" id="weightKg" value="65"><label for="heightCm">Height (cm)</label><input type="number" id="heightCm" value="170"><button onclick="calculateBMI()">Calculate BMI</button></div><div class="box" id="bmiResult" style="margin-top:14px;"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 208 of 425</footer>
+<script>
+function calculateBMI() {
+  const weight = parseFloat(document.getElementById('weightKg').value);
+  const heightCm = parseFloat(document.getElementById('heightCm').value);
+  const resultBox = document.getElementById('bmiResult');
+  if (!weight || !heightCm) { resultBox.textContent = 'Please enter valid weight and height.'; return; }
+  const heightM = heightCm / 100;
+  const bmi = weight / (heightM * heightM);
+  let category;
+  if (bmi < 18.5) category = 'Underweight';
+  else if (bmi < 25) category = 'Normal weight';
+  else if (bmi < 30) category = 'Overweight';
+  else category = 'Obese';
+  resultBox.textContent = `Your BMI is ${bmi.toFixed(1)} (${category})`;
+}
+</script>
+</body>
+</html>

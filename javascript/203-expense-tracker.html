@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a simple expense tracker</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>203. Create a simple expense tracker</h1>
+      <p class="description">Tracks a list of expenses, showing a running total, using an in-memory array.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="expName" placeholder="Expense name"><input type="number" id="expAmount" placeholder="Amount"><button onclick="addExpense()">Add</button></div><ul id="expList" style="list-style:none; padding:0;"></ul><p id="expTotal" style="font-weight:700;">Total: ₹0</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 203 of 425</footer>
+<script>
+let expenses = [];
+function addExpense() {
+  const name = document.getElementById('expName').value.trim();
+  const amount = parseFloat(document.getElementById('expAmount').value);
+  if (!name || isNaN(amount)) return;
+  expenses.push({ name, amount });
+  document.getElementById('expName').value = ''; document.getElementById('expAmount').value = '';
+  renderExpenses();
+}
+function renderExpenses() {
+  const list = document.getElementById('expList');
+  list.innerHTML = '';
+  let total = 0;
+  expenses.forEach((e, i) => {
+    total += e.amount;
+    const li = document.createElement('li');
+    li.style.cssText = 'display:flex; justify-content:space-between; background:var(--light-blue); padding:8px; margin-bottom:6px; border-radius:6px;';
+    li.innerHTML = `<span>${e.name}</span><span>₹${e.amount.toFixed(2)}</span>`;
+    list.appendChild(li);
+  });
+  document.getElementById('expTotal').textContent = `Total: ₹${total.toFixed(2)}`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the frequency of characters in a string</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>153. Write a program to find the frequency of characters in a string</h1>
+      <p class="description">Counts how many times each character appears in a string using a frequency map object.</p>
+      <div class="demo-area">
+<input type="text" id="charFreqInput" value="programming"><button onclick="charFrequency()">Find Frequency</button><pre id="charFreqOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 153 of 425</footer>
+<script>
+function charFrequency() {
+  const str = document.getElementById('charFreqInput').value;
+  const freq = {};
+  for (const ch of str) freq[ch] = (freq[ch] || 0) + 1;
+  document.getElementById('charFreqOut').textContent = JSON.stringify(freq, null, 2);
+}
+charFrequency();
+</script>
+</body>
+</html>

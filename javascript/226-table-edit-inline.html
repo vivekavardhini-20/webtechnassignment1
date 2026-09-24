@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit table data dynamically</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#editTable { width: 100%; border-collapse: collapse; } #editTable th, #editTable td { border: 1px solid var(--border); padding: 8px; } #editTable td[contenteditable]:focus { background: var(--light-blue); outline: 2px solid var(--blue); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>226. Edit table data dynamically</h1>
+      <p class="description">Demonstrates making table cells editable in place using the contentEditable attribute.</p>
+      <div class="demo-area">
+<table id="editTable"><thead><tr><th>Name (click to edit)</th><th>Marks (click to edit)</th></tr></thead><tbody><tr><td contenteditable="true">Shaik Abdulkalam</td><td contenteditable="true">92</td></tr></tbody></table><p style="color:var(--muted); font-size:0.85rem; margin-top:8px;">Click any cell above to edit its text directly.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 226 of 425</footer>
+
+</body>
+</html>

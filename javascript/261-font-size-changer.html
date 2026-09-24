@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a button that changes font size dynamically</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>261. Create a button that changes font size dynamically</h1>
+      <p class="description">Demonstrates increasing and decreasing an element's font size on button click.</p>
+      <div class="demo-area">
+<p id="fontSizeTarget" style="font-size:16px;">This text changes size.</p><div class="row"><button onclick="changeFontSize(2)">A+ Increase</button><button onclick="changeFontSize(-2)">A- Decrease</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 261 of 425</footer>
+<script>
+function changeFontSize(delta) {
+  const el = document.getElementById('fontSizeTarget');
+  const current = parseInt(window.getComputedStyle(el).fontSize, 10);
+  el.style.fontSize = (current + delta) + 'px';
+}
+</script>
+</body>
+</html>

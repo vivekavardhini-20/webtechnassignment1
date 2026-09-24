@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display the current browser language</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>332. Display the current browser language</h1>
+      <p class="description">Demonstrates reading browser and device information from the navigator object.</p>
+      <div class="demo-area">
+<pre id="navInfo"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 332 of 425</footer>
+<script>
+document.getElementById('navInfo').textContent =
+`User Agent: ${navigator.userAgent}
+Platform: ${navigator.platform || 'not available'}
+Language: ${navigator.language}
+Online: ${navigator.onLine}
+Cookies enabled: ${navigator.cookieEnabled}
+Logical CPU cores: ${navigator.hardwareConcurrency || 'not available'}`;
+</script>
+</body>
+</html>

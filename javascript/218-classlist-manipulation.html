@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add and remove CSS classes using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#classBox.highlighted { background: var(--accent); color: #fff; transform: scale(1.05); transition: all 0.2s ease; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>218. Add and remove CSS classes using JavaScript</h1>
+      <p class="description">Demonstrates the classList API for adding, removing, toggling and checking CSS classes on an element.</p>
+      <div class="demo-area">
+<div id="classBox" class="box">Watch my classes change</div><div class="row"><button onclick="addHighlight()">Add .highlighted</button><button onclick="removeHighlight()">Remove .highlighted</button><button onclick="toggleHighlight()">Toggle .highlighted</button></div><pre id="classOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 218 of 425</footer>
+<script>
+const classBox = document.getElementById('classBox');
+function updateOutput() {
+  document.getElementById('classOutput').textContent =
+    'Current classes: ' + classBox.className + ' | Has "highlighted": ' + classBox.classList.contains('highlighted');
+}
+function addHighlight() { classBox.classList.add('highlighted'); updateOutput(); }
+function removeHighlight() { classBox.classList.remove('highlighted'); updateOutput(); }
+function toggleHighlight() { classBox.classList.toggle('highlighted'); updateOutput(); }
+updateOutput();
+</script>
+</body>
+</html>

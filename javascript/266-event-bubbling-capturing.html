@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate event bubbling</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>266. Demonstrate event bubbling</h1>
+      <p class="description">Demonstrates how events propagate from child to parent (bubbling) and how capturing reverses that order.</p>
+      <div class="demo-area">
+<div id="outer" class="box" style="padding:30px;">Outer<div id="middle" class="box" style="background:var(--blue); color:#fff; padding:20px; margin-top:10px;">Middle<div id="inner" class="box" style="background:var(--accent); color:#fff; padding:10px; margin-top:10px;">Inner (click me)</div></div></div><pre id="bubbleLog">Click the inner box to see the event order.</pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 266 of 425</footer>
+<script>
+const log = document.getElementById('bubbleLog');
+let bubbleTrace = [];
+function makeHandler(name) {
+  return function () {
+    bubbleTrace.push(name);
+    log.textContent = 'Bubbling order (child \u2192 parent): ' + bubbleTrace.join(' \u2192 ');
+  };
+}
+document.getElementById('inner').addEventListener('click', (e) => { bubbleTrace = []; makeHandler('inner')(); });
+document.getElementById('middle').addEventListener('click', makeHandler('middle'));
+document.getElementById('outer').addEventListener('click', makeHandler('outer'));
+</script>
+</body>
+</html>

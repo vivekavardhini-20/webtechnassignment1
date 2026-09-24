@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate a name field to accept only alphabets</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>278. Validate a name field to accept only alphabets</h1>
+      <p class="description">Demonstrates restricting a name field to letters and spaces only, using a regular expression.</p>
+      <div class="demo-area">
+<input type="text" id="nameAlphaInput" placeholder="Enter your name" oninput="validateNameAlpha()"><p id="nameAlphaOut" class="error-text"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 278 of 425</footer>
+<script>
+function validateNameAlpha() {
+  const value = document.getElementById('nameAlphaInput').value;
+  const valid = /^[A-Za-z\s]*$/.test(value);
+  const out = document.getElementById('nameAlphaOut');
+  out.textContent = valid ? '' : 'Name can only contain letters and spaces.';
+}
+</script>
+</body>
+</html>

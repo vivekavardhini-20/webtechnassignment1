@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a reaction-time game</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>274. Create a reaction-time game</h1>
+      <p class="description">Measures how quickly the user clicks a button after it turns green, testing reaction speed.</p>
+      <div class="demo-area">
+<button id="reactionBtn" onclick="reactionClick()" style="background:#c0392b;">Wait for green...</button><p id="reactionOut"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 274 of 425</footer>
+<script>
+let reactionStart = 0, reactionWaiting = false;
+function startReactionTest() {
+  reactionWaiting = false;
+  const btn = document.getElementById('reactionBtn');
+  btn.style.background = '#c0392b'; btn.textContent = 'Wait for green...';
+  const delay = 1000 + Math.random() * 3000;
+  setTimeout(() => {
+    btn.style.background = '#1e8449'; btn.textContent = 'CLICK NOW!';
+    reactionStart = Date.now(); reactionWaiting = true;
+  }, delay);
+}
+function reactionClick() {
+  if (!reactionWaiting) { document.getElementById('reactionOut').textContent = 'Too soon! Wait for green.'; startReactionTest(); return; }
+  const time = Date.now() - reactionStart;
+  document.getElementById('reactionOut').textContent = `Your reaction time: ${time} ms`;
+  reactionWaiting = false;
+  startReactionTest();
+}
+startReactionTest();
+</script>
+</body>
+</html>

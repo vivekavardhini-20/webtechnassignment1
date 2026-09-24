@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate password and confirm password fields</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>284. Validate password and confirm password fields</h1>
+      <p class="description">Client-side validation using JavaScript: required fields, email format, password length and matching confirmation.</p>
+      <div class="demo-area">
+<form class="demo-form" id="signupForm" novalidate>
+  <label for="name">Full Name</label><input type="text" id="name"><span class="error-text" id="nameError"></span>
+  <label for="email">Email</label><input type="text" id="email"><span class="error-text" id="emailError"></span>
+  <label for="password">Password</label><input type="password" id="password"><span class="error-text" id="passwordError"></span>
+  <label for="confirmPassword">Confirm Password</label><input type="password" id="confirmPassword"><span class="error-text" id="confirmError"></span>
+  <button type="submit">Sign Up</button>
+  <p id="formSuccess" class="success-text"></p>
+</form>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 284 of 425</footer>
+<script>
+const form = document.getElementById('signupForm');
+function setError(id, message) { document.getElementById(id).textContent = message; }
+function clearErrors() { ['nameError','emailError','passwordError','confirmError'].forEach(id => setError(id, '')); document.getElementById('formSuccess').textContent = ''; }
+function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  clearErrors();
+  let isValid = true;
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirm = document.getElementById('confirmPassword').value;
+  if (name === '') { setError('nameError', 'Name is required.'); isValid = false; }
+  if (!isValidEmail(email)) { setError('emailError', 'Please enter a valid email address.'); isValid = false; }
+  if (password.length < 6) { setError('passwordError', 'Password must be at least 6 characters.'); isValid = false; }
+  if (confirm !== password || confirm === '') { setError('confirmError', 'Passwords do not match.'); isValid = false; }
+  if (isValid) { document.getElementById('formSuccess').textContent = 'Form submitted successfully!'; form.reset(); }
+});
+</script>
+</body>
+</html>

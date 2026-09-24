@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the least common multiple (LCM) of two numbers</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>138. Write a program to find the least common multiple (LCM) of two numbers</h1>
+      <p class="description">Calculates the Least Common Multiple using the relationship LCM = (a*b) / GCD(a,b).</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="lcmA" value="4"><input type="number" id="lcmB" value="6"><button onclick="calcLCM()">Find LCM</button></div><div class="box" id="lcmOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 138 of 425</footer>
+<script>
+function gcdHelper(a, b) { return b === 0 ? a : gcdHelper(b, a % b); }
+function calcLCM() {
+  const a = Number(document.getElementById('lcmA').value);
+  const b = Number(document.getElementById('lcmB').value);
+  const lcm = Math.abs(a * b) / gcdHelper(a, b);
+  document.getElementById('lcmOut').textContent = `LCM of ${a} and ${b} = ${lcm}`;
+}
+calcLCM();
+</script>
+</body>
+</html>

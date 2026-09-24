@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the sum of digits of a number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>101. Write a program to find the sum of digits of a number</h1>
+      <p class="description">Extracts each digit using modulus/division and accumulates their sum.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="sumDigitsInput" value="12345"><button onclick="sumDigits()">Calculate</button></div><div class="box" id="sumDigitsOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 101 of 425</footer>
+<script>
+function sumDigits() {
+  let n = Math.abs(parseInt(document.getElementById('sumDigitsInput').value, 10));
+  let sum = 0;
+  while (n > 0) { sum += n % 10; n = Math.floor(n / 10); }
+  document.getElementById('sumDigitsOut').textContent = 'Sum of digits: ' + sum;
+}
+sumDigits();
+</script>
+</body>
+</html>

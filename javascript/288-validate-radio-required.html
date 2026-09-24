@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate checkbox selection</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>288. Validate checkbox selection</h1>
+      <p class="description">Demonstrates checking that at least one radio button (or a required checkbox) has been selected before allowing submission.</p>
+      <div class="demo-area">
+<form class="demo-form" onsubmit="return validateRadioForm()"><label>Gender</label><input type="radio" name="genderVal" value="M" style="width:auto; display:inline;"> Male <input type="radio" name="genderVal" value="F" style="width:auto; display:inline; margin-left:10px;"> Female<br><label style="margin-top:10px;"><input type="checkbox" id="agreeCheckbox" style="width:auto; display:inline;"> I agree to the terms</label><button type="submit">Submit</button></form><p id="radioValidateOut" class="error-text"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 288 of 425</footer>
+<script>
+function validateRadioForm() {
+  const genderChecked = document.querySelector('input[name="genderVal"]:checked');
+  const agreed = document.getElementById('agreeCheckbox').checked;
+  const out = document.getElementById('radioValidateOut');
+  if (!genderChecked) { out.textContent = 'Please select a gender.'; return false; }
+  if (!agreed) { out.textContent = 'You must agree to the terms.'; return false; }
+  out.textContent = ''; out.className = 'success-text'; out.textContent = 'Form is valid!';
+  return false; // prevent actual navigation in this demo
+}
+</script>
+</body>
+</html>

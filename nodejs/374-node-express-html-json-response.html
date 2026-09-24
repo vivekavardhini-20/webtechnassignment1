@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send HTML and JSON responses using Express</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>374. Send HTML and JSON responses using Express</h1>
+      <p class="description">Demonstrates the difference between res.send() for HTML/text and res.json() for structured JSON data.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const express = require(&#x27;express&#x27;);
+const app = express();
+
+app.get(&#x27;/html-page&#x27;, (req, res) =&gt; {
+  res.send(&#x27;&lt;h1&gt;This is an HTML response&lt;/h1&gt;&lt;p&gt;Sent using res.send()&lt;/p&gt;&#x27;);
+});
+
+app.get(&#x27;/json-data&#x27;, (req, res) =&gt; {
+  res.json({ name: &#x27;Shaik Abdulkalam&#x27;, course: &#x27;CSE AI/ML&#x27;, cgpa: 8.28 });
+});
+
+app.listen(3000, () =&gt; console.log(&#x27;Server running on port 3000&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 374 of 425</footer>
+
+</body>
+</html>

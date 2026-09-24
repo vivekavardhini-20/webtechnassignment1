@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to check whether a number is positive, negative, or zero</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>95. Write a program to check whether a number is positive, negative, or zero</h1>
+      <p class="description">Uses conditional statements to classify a number as positive, negative, or zero.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="pnzInput" value="-8"><button onclick="checkPNZ()">Check</button></div><div class="box" id="pnzOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 95 of 425</footer>
+<script>
+function checkPNZ() {
+  const n = Number(document.getElementById('pnzInput').value);
+  let result;
+  if (n > 0) result = 'Positive';
+  else if (n < 0) result = 'Negative';
+  else result = 'Zero';
+  document.getElementById('pnzOut').textContent = n + ' is ' + result;
+}
+checkPNZ();
+</script>
+</body>
+</html>

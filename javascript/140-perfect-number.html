@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to check whether a number is a perfect number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>140. Write a program to check whether a number is a perfect number</h1>
+      <p class="description">Checks if a number equals the sum of its proper divisors (e.g. 6 = 1+2+3).</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="perfInput" value="28"><button onclick="checkPerfect()">Check</button></div><div class="box" id="perfOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 140 of 425</footer>
+<script>
+function checkPerfect() {
+  const n = parseInt(document.getElementById('perfInput').value, 10);
+  let sum = 0;
+  for (let i = 1; i < n; i++) if (n % i === 0) sum += i;
+  document.getElementById('perfOut').textContent = n + ' is ' + (sum === n && n !== 0 ? 'a Perfect number' : 'NOT a Perfect number') + ` (sum of divisors = ${sum})`;
+}
+checkPerfect();
+</script>
+</body>
+</html>

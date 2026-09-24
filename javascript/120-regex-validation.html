@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate name, email, phone number, and password using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>120. Validate name, email, phone number, and password using JavaScript</h1>
+      <p class="description">Validates email and Indian mobile number formats in real time using regular expressions.</p>
+      <div class="demo-area">
+<div class="demo-form">
+  <label for="regexEmail">Email</label><input type="text" id="regexEmail" oninput="validateEmail()">
+  <span class="error-text" id="regexEmailMsg"></span>
+  <label for="regexPhone">Phone (10-digit Indian mobile)</label><input type="text" id="regexPhone" oninput="validatePhone()">
+  <span class="error-text" id="regexPhoneMsg"></span>
+</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 120 of 425</footer>
+<script>
+function validateEmail() {
+  const value = document.getElementById('regexEmail').value;
+  const valid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+  const msg = document.getElementById('regexEmailMsg');
+  msg.textContent = value === '' ? '' : (valid ? 'Valid email format ✓' : 'Invalid email format');
+  msg.style.color = valid ? '#1e8449' : '#c0392b';
+}
+function validatePhone() {
+  const value = document.getElementById('regexPhone').value;
+  const valid = /^[6-9]\d{9}$/.test(value);
+  const msg = document.getElementById('regexPhoneMsg');
+  msg.textContent = value === '' ? '' : (valid ? 'Valid Indian mobile number ✓' : 'Must be 10 digits, starting with 6-9');
+  msg.style.color = valid ? '#1e8449' : '#c0392b';
+}
+</script>
+</body>
+</html>

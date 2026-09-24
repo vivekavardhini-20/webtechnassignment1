@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a student registration form using HTML form elements</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>HTML Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>5. Create a student registration form using HTML form elements</h1>
+      <p class="description">Demonstrates common form elements: text input, email, password, radio, checkbox, select and textarea.</p>
+      <div class="demo-area">
+<form class="demo-form" action="#" method="post">
+  <label for="fullname">Full Name</label>
+  <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" required>
+  <label>Gender</label>
+  <input type="radio" id="male" name="gender" value="male" style="width:auto; display:inline;">
+  <label for="male" style="display:inline; font-weight:normal;">Male</label>
+  <input type="radio" id="female" name="gender" value="female" style="width:auto; display:inline;">
+  <label for="female" style="display:inline; font-weight:normal;">Female</label>
+  <label for="course">Course</label>
+  <select id="course" name="course">
+    <option value="cse">B.Tech CSE</option>
+    <option value="aiml">B.Tech CSE - AI/ML</option>
+  </select>
+  <label for="bio">About You</label>
+  <textarea id="bio" name="bio" rows="3" placeholder="Write a short bio..."></textarea>
+  <button type="submit">Register</button>
+</form>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to HTML Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>HTML Programs &mdash; Question 5 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a currency converter using an API</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>209. Create a currency converter using an API</h1>
+      <p class="description">Converts an amount between currencies using the free exchangerate.host public API.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="currAmount" value="100"><select id="currFrom"><option value="USD">USD</option><option value="EUR">EUR</option><option value="INR">INR</option></select><span>to</span><select id="currTo"><option value="INR">INR</option><option value="USD">USD</option><option value="EUR">EUR</option></select><button onclick="convertCurrency()">Convert</button></div><div class="box" id="currOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 209 of 425</footer>
+<script>
+async function convertCurrency() {
+  const amount = document.getElementById('currAmount').value;
+  const from = document.getElementById('currFrom').value;
+  const to = document.getElementById('currTo').value;
+  const out = document.getElementById('currOut');
+  out.textContent = 'Converting...';
+  try {
+    const res = await fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`);
+    const data = await res.json();
+    out.textContent = `${amount} ${from} = ${data.result ? data.result.toFixed(2) : '?'} ${to}`;
+  } catch (err) {
+    out.textContent = 'Conversion failed (needs internet connection): ' + err.message;
+  }
+}
+</script>
+</body>
+</html>

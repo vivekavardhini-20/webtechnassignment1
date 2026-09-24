@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a tabs interface using DOM manipulation</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>236. Create a tabs interface using DOM manipulation</h1>
+      <p class="description">Demonstrates a tabbed interface where clicking a tab label shows its corresponding content panel.</p>
+      <div class="demo-area">
+<div class="row" id="tabButtons"><button onclick="showTab(0)">Tab 1</button><button onclick="showTab(1)">Tab 2</button><button onclick="showTab(2)">Tab 3</button></div><div class="box" id="tabContent">Content for Tab 1</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 236 of 425</footer>
+<script>
+const tabContents = ['Content for Tab 1', 'Content for Tab 2', 'Content for Tab 3'];
+function showTab(index) { document.getElementById('tabContent').textContent = tabContents[index]; }
+</script>
+</body>
+</html>

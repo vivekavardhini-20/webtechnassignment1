@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Programs</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>HTML Programs</h1>
+    <p>15 practical programs</p>
+  </header>
+
+  <main>
+    <input type="text" class="search-box" id="searchBox" placeholder="Search programs by name..." onkeyup="filterPrograms()">
+    <h2 class="category-heading">HTML Programs</h2>
+    <ol class="program-list" start="1">
+      <li><a href="001-html-basic-structure.html">Create a basic HTML webpage using headings, paragraphs, and line breaks</a></li>
+      <li><a href="002-html-lists.html">Create an HTML page containing ordered, unordered, and description lists</a></li>
+      <li><a href="003-html-tables.html">Create a webpage using tables with rows, columns, borders, and merged cells</a></li>
+      <li><a href="004-html-links-navigation.html">Create an HTML page containing images and hyperlinks</a></li>
+      <li><a href="005-html-registration-form.html">Create a student registration form using HTML form elements</a></li>
+      <li><a href="006-html-audio-video-image-showcase.html">Create a webpage using audio and video elements</a></li>
+      <li><a href="007-html-iframe-embed.html">Create a webpage using frames/iframes</a></li>
+      <li><a href="008-html-semantic-layout.html">Create an HTML page demonstrating semantic elements such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, and &lt;footer&gt;</a></li>
+      <li><a href="009-html5-input-types.html">Create a webpage using HTML5 input types such as email, date, number, and password</a></li>
+      <li><a href="010-html-tables.html">Create a college timetable using an HTML table</a></li>
+      <li><a href="011-css-inline-internal-external.html">Create a webpage with internal and external CSS styling</a></li>
+      <li><a href="012-css-box-model.html">Create a webpage demonstrating CSS selectors, colors, fonts, margins, padding, and borders</a></li>
+      <li><a href="013-css-media-query-breakpoints.html">Create a responsive webpage using CSS media queries</a></li>
+      <li><a href="014-css-bootstrap-components.html">Create a webpage using Bootstrap components</a></li>
+      <li><a href="015-html-full-portfolio-page.html">Create a simple personal portfolio webpage using HTML and CSS</a></li>
+    </ol>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+    </div>
+  </main>
+
+  <footer>HTML Programs Section</footer>
+
+<script>
+  function filterPrograms() {
+    const query = document.getElementById('searchBox').value.toLowerCase();
+    document.querySelectorAll('.program-list li').forEach(li => {
+      li.style.display = li.textContent.toLowerCase().includes(query) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

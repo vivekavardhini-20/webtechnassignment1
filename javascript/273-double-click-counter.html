@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a double-click counter</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>273. Create a double-click counter</h1>
+      <p class="description">A counter that only increments on a double-click event.</p>
+      <div class="demo-area">
+<button ondblclick="incrementDblClickCounter()">Double-click Me</button><p id="dblClickCounterOut" style="font-weight:700;">Double-clicks: 0</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 273 of 425</footer>
+<script>
+let dblClickCount = 0; function incrementDblClickCounter() { dblClickCount++; document.getElementById('dblClickCounterOut').textContent = 'Double-clicks: ' + dblClickCount; }
+</script>
+</body>
+</html>

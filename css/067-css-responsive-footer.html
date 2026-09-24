@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a responsive footer using HTML and CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.rfooter { display: flex; gap: 30px; background: var(--navy); color: #fff; padding: 20px; border-radius: 8px; flex-wrap: wrap; } .rfooter-col h4 { margin: 0 0 6px; } .rfooter-col p { margin: 2px 0; font-size: 0.85rem; opacity: 0.85; } @media (max-width: 400px) { .rfooter { flex-direction: column; gap: 14px; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>67. Create a responsive footer using HTML and CSS</h1>
+      <p class="description">A footer with multiple columns that stack vertically on small screens using Flexbox and media queries.</p>
+      <div class="demo-area">
+<footer class="rfooter"><div class="rfooter-col"><h4>Company</h4><p>About</p><p>Careers</p></div><div class="rfooter-col"><h4>Support</h4><p>Help Center</p><p>Contact</p></div><div class="rfooter-col"><h4>Follow</h4><p>Twitter</p><p>LinkedIn</p></div></footer>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 67 of 425</footer>
+
+</body>
+</html>

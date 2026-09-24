@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using CSS lists and tables</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.custom-disc { list-style-type: square; padding-left: 24px; } .emoji-list { list-style: none; padding-left: 0; } .emoji-list li::before { content: "✅ "; } .custom-counter { list-style: none; padding-left: 0; counter-reset: step; } .custom-counter li { counter-increment: step; margin-bottom: 6px; } .custom-counter li::before { content: "Step " counter(step) ": "; font-weight: 700; color: var(--accent); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>27. Create a webpage using CSS lists and tables</h1>
+      <p class="description">Demonstrates customizing bullet styles, using custom counters, and list-style-image alternatives with emoji.</p>
+      <div class="demo-area">
+<ul class="custom-disc"><li>Custom disc-styled item</li><li>Another item</li></ul><ul class="emoji-list"><li>Checked task</li><li>Another checked task</li></ul><ol class="custom-counter"><li>First step</li><li>Second step</li><li>Third step</li></ol>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 27 of 425</footer>
+
+</body>
+</html>

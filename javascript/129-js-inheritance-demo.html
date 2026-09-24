@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate inheritance in JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>129. Demonstrate inheritance in JavaScript</h1>
+      <p class="description">Demonstrates class inheritance using 'extends' and 'super', where a subclass builds on a base class.</p>
+      <div class="demo-area">
+<pre id="inheritDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 129 of 425</footer>
+<script>
+class Person {
+  constructor(name) { this.name = name; }
+  greet() { return `Hi, I'm ${this.name}`; }
+}
+class Student extends Person {
+  constructor(name, course) { super(name); this.course = course; } // calls Person's constructor
+  greet() { return `${super.greet()} and I study ${this.course}`; } // extends parent method
+}
+const student = new Student('Shaik Abdulkalam', 'CSE AI/ML');
+document.getElementById('inheritDemoOut').textContent = student.greet();
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage that changes text using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>111. Create a webpage that changes text using JavaScript</h1>
+      <p class="description">Demonstrates changing text content, styles, attributes, and creating/removing elements using core DOM methods.</p>
+      <div class="demo-area">
+<div id="targetBox" class="box">Original text content</div><div class="row"><button onclick="changeText()">Change Text</button><button onclick="changeStyle()">Change Style</button><button onclick="changeAttribute()">Add Attribute</button><button onclick="addListItem()">Add List Item</button><button onclick="removeLastItem()">Remove Last Item</button></div><ul id="itemList"></ul>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 111 of 425</footer>
+<script>
+const targetBox = document.getElementById('targetBox');
+const itemList = document.getElementById('itemList');
+let itemCount = 0;
+function changeText() { targetBox.textContent = 'Text changed at ' + new Date().toLocaleTimeString(); }
+function changeStyle() {
+  const colors = ['#eaf1fb', '#ffe8cc', '#caffbf', '#ffd6e0'];
+  targetBox.style.background = colors[Math.floor(Math.random() * colors.length)];
+}
+function changeAttribute() {
+  targetBox.setAttribute('title', 'Tooltip added via JavaScript');
+  targetBox.setAttribute('data-updated', 'true');
+  alert('Added title and data-updated attributes. Hover over the box to see the tooltip.');
+}
+function addListItem() {
+  itemCount++;
+  const li = document.createElement('li');
+  li.textContent = `Dynamically created item #${itemCount}`;
+  itemList.appendChild(li);
+}
+function removeLastItem() { if (itemList.lastElementChild) itemList.removeChild(itemList.lastElementChild); }
+</script>
+</body>
+</html>

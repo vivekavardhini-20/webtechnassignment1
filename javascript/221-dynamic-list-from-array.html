@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a dynamic unordered list from an array</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>221. Create a dynamic unordered list from an array</h1>
+      <p class="description">Demonstrates building a &amp;lt;ul&amp;gt; list dynamically from a JavaScript array.</p>
+      <div class="demo-area">
+<button onclick="buildListFromArray()">Build List from Array</button><ul id="arrayList"></ul>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 221 of 425</footer>
+<script>
+function buildListFromArray() {
+  const items = ['HTML', 'CSS', 'JavaScript', 'Node.js'];
+  const ul = document.getElementById('arrayList');
+  ul.innerHTML = '';
+  items.forEach(item => { const li = document.createElement('li'); li.textContent = item; ul.appendChild(li); });
+}
+</script>
+</body>
+</html>

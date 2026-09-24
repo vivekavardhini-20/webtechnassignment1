@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a visitor counter using browser storage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>352. Create a visitor counter using browser storage</h1>
+      <p class="description">Demonstrates counting how many times this page has been opened, persisted with localStorage.</p>
+      <div class="demo-area">
+<div class="box" id="visitorCountOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 352 of 425</footer>
+<script>
+let visitCount = parseInt(localStorage.getItem('visitorCount') || '0', 10);
+visitCount++;
+localStorage.setItem('visitorCount', visitCount);
+document.getElementById('visitorCountOut').textContent = `This page has been visited ${visitCount} time(s) (persists across reloads).`;
+</script>
+</body>
+</html>

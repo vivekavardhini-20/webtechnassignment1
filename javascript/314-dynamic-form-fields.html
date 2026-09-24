@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a form with dynamic fields based on user selection</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>314. Create a form with dynamic fields based on user selection</h1>
+      <p class="description">Demonstrates showing/hiding extra form fields depending on a dropdown choice.</p>
+      <div class="demo-area">
+<div class="demo-form"><label>Account Type</label><select id="accountTypeSelect" onchange="updateDynamicFields()"><option value="personal">Personal</option><option value="business">Business</option></select><div id="businessFieldsOnly" style="display:none;"><label>Company Name</label><input type="text"></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 314 of 425</footer>
+<script>
+function updateDynamicFields() {
+  const type = document.getElementById('accountTypeSelect').value;
+  document.getElementById('businessFieldsOnly').style.display = type === 'business' ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

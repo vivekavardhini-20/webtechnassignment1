@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a simple quiz application</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>122. Create a simple quiz application</h1>
+      <p class="description">A multiple-choice quiz that tracks the score across several questions and shows the final result.</p>
+      <div class="demo-area">
+<div class="box" id="quizQuestion"></div><div class="row" id="quizOptions" style="flex-direction:column; align-items:stretch;"></div><p id="quizScore" style="font-weight:700;"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 122 of 425</footer>
+<script>
+const quizData = [
+  { q: 'What does HTML stand for?', options: ['Hyper Trainer Marking Language', 'Hyper Text Markup Language', 'Hyperlinks Text Mark Language'], answer: 1 },
+  { q: 'Which language runs in a web browser?', options: ['Java', 'C', 'JavaScript'], answer: 2 },
+  { q: 'CSS is used for?', options: ['Structure', 'Styling', 'Logic'], answer: 1 }
+];
+let quizIndex = 0, quizScore = 0;
+function renderQuiz() {
+  if (quizIndex >= quizData.length) {
+    document.getElementById('quizQuestion').textContent = 'Quiz complete!';
+    document.getElementById('quizOptions').innerHTML = '';
+    document.getElementById('quizScore').textContent = `Final Score: ${quizScore} / ${quizData.length}`;
+    return;
+  }
+  const current = quizData[quizIndex];
+  document.getElementById('quizQuestion').textContent = `Q${quizIndex + 1}: ${current.q}`;
+  const optionsDiv = document.getElementById('quizOptions');
+  optionsDiv.innerHTML = '';
+  current.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.onclick = () => { if (i === current.answer) quizScore++; quizIndex++; renderQuiz(); };
+    optionsDiv.appendChild(btn);
+  });
+  document.getElementById('quizScore').textContent = `Score so far: ${quizScore}`;
+}
+renderQuiz();
+</script>
+</body>
+</html>

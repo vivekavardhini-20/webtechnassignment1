@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Implement CRUD operations with database connectivity</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>402. Implement CRUD operations with database connectivity</h1>
+      <p class="description">Demonstrates the same CRUD pattern as before, but backed by a real MongoDB database via Mongoose instead of an in-memory array.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const express = require(&#x27;express&#x27;);
+const Student = require(&#x27;./models/Student&#x27;); // Mongoose model
+const app = express();
+app.use(express.json());
+
+app.post(&#x27;/students&#x27;, async (req, res) =&gt; {
+  const student = await Student.create(req.body);
+  res.status(201).json(student);
+});
+app.get(&#x27;/students&#x27;, async (req, res) =&gt; {
+  const students = await Student.find();
+  res.json(students);
+});
+app.put(&#x27;/students/:id&#x27;, async (req, res) =&gt; {
+  const updated = await Student.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.json(updated);
+});
+app.delete(&#x27;/students/:id&#x27;, async (req, res) =&gt; {
+  await Student.findByIdAndDelete(req.params.id);
+  res.status(204).send();
+});
+
+app.listen(3000, () =&gt; console.log(&#x27;DB-backed CRUD API running on port 3000&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 402 of 425</footer>
+
+</body>
+</html>

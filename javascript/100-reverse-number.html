@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to reverse a number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>100. Write a program to reverse a number</h1>
+      <p class="description">Reverses the digits of an integer using arithmetic (modulus and integer division).</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="revNumInput" value="12345"><button onclick="reverseNumber()">Reverse</button></div><div class="box" id="revNumOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 100 of 425</footer>
+<script>
+function reverseNumber() {
+  let n = parseInt(document.getElementById('revNumInput').value, 10);
+  const sign = n < 0 ? -1 : 1;
+  n = Math.abs(n);
+  let reversed = 0;
+  while (n > 0) { reversed = reversed * 10 + (n % 10); n = Math.floor(n / 10); }
+  document.getElementById('revNumOut').textContent = 'Reversed: ' + (reversed * sign);
+}
+reverseNumber();
+</script>
+</body>
+</html>

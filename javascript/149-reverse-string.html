@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to reverse a string</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>149. Write a program to reverse a string</h1>
+      <p class="description">Reverses a string by splitting it into characters, reversing the array, then joining it back.</p>
+      <div class="demo-area">
+<input type="text" id="revStrInput" value="JavaScript"><button onclick="reverseStringDemo()">Reverse</button><div class="box" id="revStrOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 149 of 425</footer>
+<script>
+function reverseStringDemo() {
+  const str = document.getElementById('revStrInput').value;
+  document.getElementById('revStrOut').textContent = str.split('').reverse().join('');
+}
+reverseStringDemo();
+</script>
+</body>
+</html>

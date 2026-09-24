@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate the Path (path) module</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>366. Demonstrate the Path (path) module</h1>
+      <p class="description">Demonstrates common methods of the 'path' module for working with file and directory paths across operating systems.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const path = require(&#x27;path&#x27;);
+
+const filePath = &#x27;/users/shaik/projects/app/index.js&#x27;;
+
+console.log(&#x27;basename:&#x27;, path.basename(filePath));       // index.js
+console.log(&#x27;dirname:&#x27;, path.dirname(filePath));          // /users/shaik/projects/app
+console.log(&#x27;extname:&#x27;, path.extname(filePath));          // .js
+console.log(&#x27;join:&#x27;, path.join(&#x27;folder&#x27;, &#x27;subfolder&#x27;, &#x27;file.txt&#x27;));
+console.log(&#x27;resolve:&#x27;, path.resolve(&#x27;folder&#x27;, &#x27;file.txt&#x27;));
+console.log(&#x27;parse:&#x27;, JSON.stringify(path.parse(filePath), null, 2));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 366 of 425</footer>
+
+</body>
+</html>

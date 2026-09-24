@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to demonstrate JavaScript functions</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>105. Write a program to demonstrate JavaScript functions</h1>
+      <p class="description">Demonstrates a function declaration that takes parameters and returns a value.</p>
+      <div class="demo-area">
+<pre id="funcDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 105 of 425</footer>
+<script>
+function calculateArea(length, width) { return length * width; }
+document.getElementById('funcDemoOut').textContent = `calculateArea(5, 3) = ${calculateArea(5, 3)} square units`;
+</script>
+</body>
+</html>

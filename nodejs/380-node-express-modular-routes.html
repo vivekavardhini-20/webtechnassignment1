@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create modular routes for users, products, or students</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>380. Create modular routes for users, products, or students</h1>
+      <p class="description">Demonstrates splitting an app's routes across multiple resource-specific files, each mounted at its own path prefix.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">// ---- routes/users.js ----
+const express = require(&#x27;express&#x27;);
+const router = express.Router();
+router.get(&#x27;/&#x27;, (req, res) =&gt; res.json([{ id: 1, name: &#x27;User One&#x27; }]));
+module.exports = router;
+
+// ---- routes/products.js ----
+const express2 = require(&#x27;express&#x27;);
+const productRouter = express2.Router();
+productRouter.get(&#x27;/&#x27;, (req, res) =&gt; res.json([{ id: 1, item: &#x27;Laptop&#x27; }]));
+module.exports = productRouter;
+
+// ---- server.js ----
+const express = require(&#x27;express&#x27;);
+const app = express();
+app.use(&#x27;/api/users&#x27;, require(&#x27;./routes/users&#x27;));
+app.use(&#x27;/api/products&#x27;, require(&#x27;./routes/products&#x27;));
+app.listen(3000, () =&gt; console.log(&#x27;Modular routes running on port 3000&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 380 of 425</footer>
+
+</body>
+</html>

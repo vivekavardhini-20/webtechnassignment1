@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate callbacks, promises, and async/await</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>130. Demonstrate callbacks, promises, and async/await</h1>
+      <p class="description">Demonstrates creating and consuming a Promise, including .then() and .catch() for success and failure handling.</p>
+      <div class="demo-area">
+<button onclick="runPromiseDemo()">Run Promise (random success/fail)</button><pre id="promiseOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 130 of 425</footer>
+<script>
+function riskyTask() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = Math.random() > 0.3;
+      if (success) resolve('Task completed successfully!');
+      else reject('Task failed - please try again.');
+    }, 1000);
+  });
+}
+function runPromiseDemo() {
+  document.getElementById('promiseOutput').textContent = 'Running...';
+  riskyTask()
+    .then(result => { document.getElementById('promiseOutput').textContent = 'Resolved: ' + result; })
+    .catch(error => { document.getElementById('promiseOutput').textContent = 'Rejected: ' + error; });
+}
+</script>
+</body>
+</html>

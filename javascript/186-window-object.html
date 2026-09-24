@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate the Window object</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>186. Demonstrate the Window object</h1>
+      <p class="description">Demonstrates reading properties of the global window object: size, alert/confirm dialogs, and opening a new window.</p>
+      <div class="demo-area">
+<pre id="windowInfo"></pre><div class="row"><button onclick="showAlertDemo()">window.alert()</button><button onclick="showConfirmDemo()">window.confirm()</button></div><p id="confirmResultW" style="font-weight:600;"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 186 of 425</footer>
+<script>
+document.getElementById('windowInfo').textContent =
+`window.innerWidth: ${window.innerWidth}
+window.innerHeight: ${window.innerHeight}
+window.outerWidth: ${window.outerWidth}
+window.devicePixelRatio: ${window.devicePixelRatio}`;
+function showAlertDemo() { window.alert('This message box was triggered by window.alert().'); }
+function showConfirmDemo() {
+  const result = window.confirm('Do you like this JavaScript practical?');
+  document.getElementById('confirmResultW').textContent = 'You clicked: ' + (result ? 'OK (true)' : 'Cancel (false)');
+}
+</script>
+</body>
+</html>

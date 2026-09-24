@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a mouse coordinate tracker</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>270. Create a mouse coordinate tracker</h1>
+      <p class="description">Demonstrates tracking and displaying the live X/Y coordinates of the mouse pointer as it moves over an area.</p>
+      <div class="demo-area">
+<div class="box" id="mouseTrackArea" style="height:100px;" onmousemove="trackMouse(event)">Move your mouse here</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 270 of 425</footer>
+<script>
+function trackMouse(e) { const rect = e.target.getBoundingClientRect(); document.getElementById('mouseTrackArea').textContent = `X: ${Math.round(e.clientX - rect.left)}, Y: ${Math.round(e.clientY - rect.top)}`; }
+</script>
+</body>
+</html>

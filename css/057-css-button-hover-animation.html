@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage with a CSS-only button hover animation</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.sweep-btn { position: relative; overflow: hidden; padding: 12px 28px; background: var(--navy); color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; z-index: 1; } .sweep-btn::before { content: ""; position: absolute; inset: 0; background: var(--accent); transform: translateX(-100%); transition: transform 0.3s ease; z-index: -1; } .sweep-btn:hover::before { transform: translateX(0); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>57. Create a webpage with a CSS-only button hover animation</h1>
+      <p class="description">A button with an animated fill-sweep hover effect, built entirely with CSS transitions (no JavaScript).</p>
+      <div class="demo-area">
+<button class="sweep-btn">Hover Me</button>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 57 of 425</footer>
+
+</body>
+</html>

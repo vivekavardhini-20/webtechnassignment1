@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the second-largest element in an array</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>144. Write a program to find the second-largest element in an array</h1>
+      <p class="description">Sorts a copy of the array descending and picks the second unique value.</p>
+      <div class="demo-area">
+<input type="text" id="secondLargestInput" value="45, 89, 12, 89, 67"><button onclick="findSecondLargest()">Find</button><div class="box" id="secondLargestOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 144 of 425</footer>
+<script>
+function findSecondLargest() {
+  const arr = document.getElementById('secondLargestInput').value.split(',').map(Number);
+  const unique = [...new Set(arr)].sort((a, b) => b - a);
+  document.getElementById('secondLargestOut').textContent = unique.length > 1 ? 'Second largest: ' + unique[1] : 'Not enough unique elements';
+}
+findSecondLargest();
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program using arrow functions</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>106. Write a program using arrow functions</h1>
+      <p class="description">Demonstrates converting a regular function into concise arrow function syntax.</p>
+      <div class="demo-area">
+<pre id="arrowDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 106 of 425</footer>
+<script>
+const cube = x => x ** 3;
+const isEven = n => n % 2 === 0;
+document.getElementById('arrowDemoOut').textContent = `cube(4) = ${cube(4)}\nisEven(7) = ${isEven(7)}`;
+</script>
+</body>
+</html>

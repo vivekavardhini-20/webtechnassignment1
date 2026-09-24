@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find common elements in two arrays</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>148. Write a program to find common elements in two arrays</h1>
+      <p class="description">Uses filter() combined with includes() to find the intersection of two arrays.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="commonA" value="1,2,3,4,5"><input type="text" id="commonB" value="3,4,5,6,7"><button onclick="findCommon()">Find Common</button></div><div class="box" id="commonOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 148 of 425</footer>
+<script>
+function findCommon() {
+  const a = document.getElementById('commonA').value.split(',').map(Number);
+  const b = document.getElementById('commonB').value.split(',').map(Number);
+  const common = a.filter(x => b.includes(x));
+  document.getElementById('commonOut').textContent = `Common elements: [${common.join(', ')}]`;
+}
+findCommon();
+</script>
+</body>
+</html>

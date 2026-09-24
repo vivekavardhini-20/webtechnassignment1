@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a keyboard-controlled webpage/game</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>177. Create a keyboard-controlled webpage/game</h1>
+      <p class="description">Demonstrates moving a box around the screen using the arrow keys, a common pattern for simple browser games.</p>
+      <div class="demo-area">
+<div id="keyGameArena" style="position:relative; height:160px; background:var(--light-blue); border-radius:8px; overflow:hidden;"><div id="keyGamePlayer" style="position:absolute; top:60px; left:10px; width:30px; height:30px; background:var(--accent); border-radius:6px;"></div></div><p style="color:var(--muted); font-size:0.85rem;">Click inside the box above, then use arrow keys to move.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 177 of 425</footer>
+<script>
+document.addEventListener('keydown', (e) => {
+  const player = document.getElementById('keyGamePlayer');
+  if (!player) return;
+  let top = parseInt(player.style.top, 10), left = parseInt(player.style.left, 10);
+  const step = 10;
+  if (e.key === 'ArrowUp') top -= step;
+  if (e.key === 'ArrowDown') top += step;
+  if (e.key === 'ArrowLeft') left -= step;
+  if (e.key === 'ArrowRight') left += step;
+  player.style.top = Math.max(0, Math.min(130, top)) + 'px';
+  player.style.left = Math.max(0, Math.min(270, left)) + 'px';
+});
+</script>
+</body>
+</html>

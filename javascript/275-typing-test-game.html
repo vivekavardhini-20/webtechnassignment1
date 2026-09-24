@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a simple keyboard typing test</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>275. Create a simple keyboard typing test</h1>
+      <p class="description">Measures typing speed (words per minute) as the user types a target sentence.</p>
+      <div class="demo-area">
+<p class="box" id="typingTarget">the quick brown fox jumps</p><textarea id="typingInput" rows="2" placeholder="Start typing the sentence above..." oninput="checkTyping()"></textarea><p id="typingResult" style="font-weight:700;"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 275 of 425</footer>
+<script>
+let typingStartTime = null;
+const targetText = 'the quick brown fox jumps';
+function checkTyping() {
+  if (!typingStartTime) typingStartTime = Date.now();
+  const typed = document.getElementById('typingInput').value;
+  if (typed.trim() === targetText) {
+    const seconds = (Date.now() - typingStartTime) / 1000;
+    const wpm = Math.round((targetText.split(' ').length / seconds) * 60);
+    document.getElementById('typingResult').textContent = `Done in ${seconds.toFixed(1)}s — approx ${wpm} WPM`;
+    typingStartTime = null;
+  }
+}
+</script>
+</body>
+</html>

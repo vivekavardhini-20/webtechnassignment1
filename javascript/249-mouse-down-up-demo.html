@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate onmousedown and onmouseup</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>249. Demonstrate onmousedown and onmouseup</h1>
+      <p class="description">Demonstrates detecting when the mouse button is pressed down versus released.</p>
+      <div class="demo-area">
+<div class="box" id="mouseDownUpBox" onmousedown="mdEvent('down')" onmouseup="mdEvent('up')">Press and release mouse here</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 249 of 425</footer>
+<script>
+function mdEvent(type) { document.getElementById('mouseDownUpBox').textContent = 'Mouse ' + type + ' detected!'; }
+</script>
+</body>
+</html>

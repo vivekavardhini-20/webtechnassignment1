@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate a textarea</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>290. Validate a textarea</h1>
+      <p class="description">Demonstrates checking that a textarea isn't empty and meets a minimum length.</p>
+      <div class="demo-area">
+<textarea id="textareaValidateInput" rows="3" placeholder="Write at least 20 characters..." oninput="validateTextareaField()"></textarea><p id="textareaValidateOut" class="error-text"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 290 of 425</footer>
+<script>
+function validateTextareaField() {
+  const value = document.getElementById('textareaValidateInput').value;
+  const out = document.getElementById('textareaValidateOut');
+  out.textContent = value.trim().length < 20 ? `Need at least 20 characters (currently ${value.trim().length}).` : '';
+}
+</script>
+</body>
+</html>

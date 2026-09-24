@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a theme switcher (light/dark mode) using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.theme-switch-box { padding: 20px; border-radius: 10px; background: #fff; color: var(--text); transition: all 0.3s ease; } .theme-switch-box.dark { background: #1f2937; color: #f4f7fb; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>193. Create a theme switcher (light/dark mode) using localStorage</h1>
+      <p class="description">Demonstrates saving the user's light/dark theme choice to localStorage so it's remembered on their next visit.</p>
+      <div class="demo-area">
+<div class="theme-switch-box" id="themeSwitchBox"><p>This box remembers your theme choice.</p><button onclick="setThemePref('light')">Light</button> <button onclick="setThemePref('dark')">Dark</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 193 of 425</footer>
+<script>
+function setThemePref(theme) {
+  localStorage.setItem('themePreference', theme);
+  applyThemePref();
+}
+function applyThemePref() {
+  const theme = localStorage.getItem('themePreference') || 'light';
+  document.getElementById('themeSwitchBox').classList.toggle('dark', theme === 'dark');
+}
+applyThemePref();
+</script>
+</body>
+</html>

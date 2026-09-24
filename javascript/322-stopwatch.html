@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a stopwatch</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#sw-display { font-size: 2.8rem; font-weight: 700; text-align: center; color: var(--navy); background: var(--light-blue); padding: 24px; border-radius: 12px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>322. Create a stopwatch</h1>
+      <p class="description">A start/pause/reset stopwatch using setInterval to track elapsed time in minutes, seconds and centiseconds.</p>
+      <div class="demo-area">
+<div id="sw-display">00:00:00</div><div class="row" style="justify-content:center;"><button id="startBtn" onclick="startStopwatch()">Start</button><button id="pauseBtn" onclick="pauseStopwatch()">Pause</button><button id="resetBtn" onclick="resetStopwatch()">Reset</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 322 of 425</footer>
+<script>
+const swDisplay = document.getElementById('sw-display');
+let elapsedMs = 0, timerId = null, isRunning = false;
+function pad(n) { return n.toString().padStart(2, '0'); }
+function render() {
+  const totalCentis = Math.floor(elapsedMs / 10);
+  const minutes = Math.floor(totalCentis / 6000);
+  const seconds = Math.floor((totalCentis % 6000) / 100);
+  const centis = totalCentis % 100;
+  swDisplay.textContent = `${pad(minutes)}:${pad(seconds)}:${pad(centis)}`;
+}
+function startStopwatch() {
+  if (isRunning) return;
+  isRunning = true;
+  const startTime = Date.now() - elapsedMs;
+  timerId = setInterval(() => { elapsedMs = Date.now() - startTime; render(); }, 10);
+}
+function pauseStopwatch() { isRunning = false; clearInterval(timerId); }
+function resetStopwatch() { pauseStopwatch(); elapsedMs = 0; render(); }
+</script>
+</body>
+</html>

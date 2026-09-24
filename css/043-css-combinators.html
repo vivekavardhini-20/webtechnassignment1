@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using combinator selectors: descendant, child, adjacent sibling, and general sibling</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.box > p { text-decoration: underline; } .box span { font-style: italic; color: var(--accent); } h4 + p { color: var(--blue); font-weight: 600; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>43. Create a webpage using combinator selectors: descendant, child, adjacent sibling, and general sibling</h1>
+      <p class="description">Demonstrates descendant, child (&gt;), adjacent sibling (+) and general sibling (~) combinators.</p>
+      <div class="demo-area">
+<div class="box"><p>Direct child paragraph (styled by .box > p)</p><span>Descendant span (styled by .box span)</span></div><h4>Heading</h4><p>Adjacent sibling paragraph (styled by h4 + p)</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 43 of 425</footer>
+
+</body>
+</html>

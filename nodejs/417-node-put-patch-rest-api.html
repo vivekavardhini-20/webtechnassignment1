@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Implement a PUT/PATCH REST API</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>417. Implement a PUT/PATCH REST API</h1>
+      <p class="description">Demonstrates the difference between PUT (replaces the whole resource) and PATCH (updates only given fields).</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">// PUT - expects the full resource representation
+app.put(&#x27;/api/students/:id&#x27;, (req, res) =&gt; {
+  const student = students.find(s =&gt; s.id === Number(req.params.id));
+  if (!student) return res.status(404).json({ error: &#x27;Not found&#x27; });
+  student.name = req.body.name; student.course = req.body.course; student.cgpa = req.body.cgpa;
+  res.json(student);
+});
+
+// PATCH - updates only the fields provided
+app.patch(&#x27;/api/students/:id&#x27;, (req, res) =&gt; {
+  const student = students.find(s =&gt; s.id === Number(req.params.id));
+  if (!student) return res.status(404).json({ error: &#x27;Not found&#x27; });
+  Object.assign(student, req.body); // merge only provided fields
+  res.json(student);
+});</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 417 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate fields using the input, change, focus, and blur events</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>300. Validate fields using the input, change, focus, and blur events</h1>
+      <p class="description">Demonstrates handling common form-related events and logging them as they occur.</p>
+      <div class="demo-area">
+<form class="demo-form" id="eventsForm" onsubmit="return false;">
+  <label for="feName">Name</label>
+  <input type="text" id="feName">
+  <label for="feCountry">Country</label>
+  <select id="feCountry"><option>India</option><option>USA</option><option>UK</option></select>
+  <button type="submit">Submit</button>
+</form>
+<pre id="formEventLog">Event log will appear here.</pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 300 of 425</footer>
+<script>
+const eventLog = document.getElementById('formEventLog');
+function log(msg) { eventLog.textContent = msg + '\n' + eventLog.textContent; }
+document.getElementById('feName').addEventListener('focus', () => log('Name field focused'));
+document.getElementById('feName').addEventListener('blur', () => log('Name field lost focus (blur)'));
+document.getElementById('feName').addEventListener('input', (e) => log('Typing... current value: ' + e.target.value));
+document.getElementById('feCountry').addEventListener('change', (e) => log('Country changed to: ' + e.target.value));
+document.getElementById('eventsForm').addEventListener('submit', () => log('Form submitted!'));
+</script>
+</body>
+</html>

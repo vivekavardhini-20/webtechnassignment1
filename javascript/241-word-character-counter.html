@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a live word counter</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>241. Create a live word counter</h1>
+      <p class="description">Counts words, characters and sentences in real time as the user types into a textarea.</p>
+      <div class="demo-area">
+<textarea id="wcInput" rows="5" placeholder="Start typing..." oninput="updateCounts()"></textarea><pre id="wcOutput">Words: 0 | Characters: 0 | Sentences: 0</pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 241 of 425</footer>
+<script>
+function updateCounts() {
+  const text = document.getElementById('wcInput').value;
+  const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  const characters = text.length;
+  const sentences = text.trim() === '' ? 0 : (text.match(/[.!?]+/g) || []).length;
+  document.getElementById('wcOutput').textContent = `Words: ${words} | Characters: ${characters} | Sentences: ${sentences}`;
+}
+</script>
+</body>
+</html>

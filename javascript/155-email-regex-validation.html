@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to validate an email address using a regular expression</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>155. Write a program to validate an email address using a regular expression</h1>
+      <p class="description">Uses a regular expression pattern to check whether input text matches a valid email format.</p>
+      <div class="demo-area">
+<input type="text" id="emailRegexInput" value="student@example.com"><button onclick="validateEmailRegex()">Validate</button><div class="box" id="emailRegexOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 155 of 425</footer>
+<script>
+function validateEmailRegex() {
+  const email = document.getElementById('emailRegexInput').value;
+  const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const valid = pattern.test(email);
+  const out = document.getElementById('emailRegexOut');
+  out.textContent = `"${email}" is ` + (valid ? 'a VALID email format' : 'an INVALID email format');
+  out.style.color = valid ? '#1e8449' : '#c0392b';
+}
+validateEmailRegex();
+</script>
+</body>
+</html>

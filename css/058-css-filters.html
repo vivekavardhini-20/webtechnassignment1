@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage demonstrating CSS filters such as blur, grayscale, brightness, and contrast</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.filter-row { display: flex; gap: 12px; flex-wrap: wrap; } .filter-box { width: 100px; height: 100px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: 700; } .f-blur { filter: blur(2px); } .f-bright { filter: brightness(1.6); } .f-gray { filter: grayscale(100%); } .f-contrast { filter: contrast(200%); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>58. Create a webpage demonstrating CSS filters such as blur, grayscale, brightness, and contrast</h1>
+      <p class="description">Demonstrates applying visual filters like blur, brightness, grayscale and contrast to elements.</p>
+      <div class="demo-area">
+<div class="filter-row"><div class="filter-box f-blur">Blur</div><div class="filter-box f-bright">Bright</div><div class="filter-box f-gray">Grayscale</div><div class="filter-box f-contrast">Contrast</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 58 of 425</footer>
+
+</body>
+</html>

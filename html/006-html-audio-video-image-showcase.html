@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using audio and video elements</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>HTML Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>6. Create a webpage using audio and video elements</h1>
+      <p class="description">An enhanced multimedia showcase combining a real playable image (drawn live with Canvas — works fully offline), a real &amp;lt;video&amp;gt; element, and a real &amp;lt;audio&amp;gt; element generated on-the-fly with the Web Audio API so it works with zero external files and zero copyright concerns.</p>
+      <div class="demo-area">
+<h3>1. Image (drawn live with Canvas — no external file needed)</h3>
+<canvas id="mmCanvas" width="320" height="140" style="border:1px solid var(--border); border-radius:8px; max-width:100%;"></canvas>
+
+<h3>2. Video Element</h3>
+<video width="100%" style="max-width:400px; border-radius:8px;" controls poster="">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  Your browser does not support the video tag. (This demo streams a small public-domain sample clip and needs an internet connection.)
+</video>
+<p style="color:var(--muted); font-size:0.85rem;">Streams a small public-domain sample clip (needs internet). Replace the src with your own local video file for offline use.</p>
+
+<h3>3. Audio Element (generated live — works 100% offline)</h3>
+<button onclick="playGeneratedTone()">▶ Play Audio Tone</button>
+<p style="color:var(--muted); font-size:0.85rem;">This uses the Web Audio API to generate a real tone on the spot, so it needs no external audio file and works completely offline.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to HTML Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>HTML Programs &mdash; Question 6 of 425</footer>
+<script>
+// Draws a simple landscape image live using the Canvas API — a genuinely
+// working "image" that needs zero external files and has zero copyright concerns.
+const ctx = document.getElementById('mmCanvas').getContext('2d');
+const grad = ctx.createLinearGradient(0, 0, 0, 140);
+grad.addColorStop(0, '#8ec9f2'); grad.addColorStop(1, '#eaf1fb');
+ctx.fillStyle = grad; ctx.fillRect(0, 0, 320, 140);
+ctx.fillStyle = '#2e5aac';
+ctx.beginPath(); ctx.arc(80, 90, 40, Math.PI, 0); ctx.fill(); // hill
+ctx.fillStyle = '#1e8449';
+ctx.beginPath(); ctx.arc(220, 100, 55, Math.PI, 0); ctx.fill(); // hill 2
+ctx.fillStyle = '#ff7a45';
+ctx.beginPath(); ctx.arc(270, 30, 18, 0, Math.PI * 2); ctx.fill(); // sun
+ctx.fillStyle = '#1f3864'; ctx.font = 'bold 14px Arial';
+ctx.fillText('Canvas-drawn image (no file needed)', 16, 130);
+
+// Generates a real, audible tone using the Web Audio API - no audio file required.
+function playGeneratedTone() {
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  const audioCtx = new AudioCtx();
+  const oscillator = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+  oscillator.type = 'sine';
+  oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // A4 note
+  gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1);
+  oscillator.connect(gainNode); gainNode.connect(audioCtx.destination);
+  oscillator.start(); oscillator.stop(audioCtx.currentTime + 1);
+}
+</script>
+</body>
+</html>

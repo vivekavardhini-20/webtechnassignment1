@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using CSS animations</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.spinner { width: 50px; height: 50px; border: 6px solid var(--light-blue); border-top: 6px solid var(--blue); border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>33. Create a webpage using CSS animations</h1>
+      <p class="description">Demonstrates a looping @keyframes rotation animation to build a common loading spinner.</p>
+      <div class="demo-area">
+<div class="spinner"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 33 of 425</footer>
+
+</body>
+</html>

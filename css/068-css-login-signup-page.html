@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a responsive login and signup page</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.auth-tabs { max-width: 300px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 4px 14px rgba(31,56,100,0.12); } .auth-tab-input { display: none; } .auth-tab-label { display: inline-block; width: 48%; text-align: center; padding: 8px 0; cursor: pointer; font-weight: 700; color: var(--muted); border-bottom: 2px solid var(--border); } #tabLogin:checked ~ label[for="tabLogin"], #tabSignup:checked ~ label[for="tabSignup"] { color: var(--navy); border-bottom-color: var(--blue); } .auth-panel { display: none; margin-top: 14px; } .auth-panel input { width: 100%; margin-bottom: 8px; padding: 8px; border: 1px solid var(--border); border-radius: 6px; box-sizing: border-box; } #tabLogin:checked ~ .login-panel { display: block; } #tabSignup:checked ~ .signup-panel { display: block; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>68. Create a responsive login and signup page</h1>
+      <p class="description">A single card with tab-toggle between Login and Signup forms, switched using a radio-button CSS trick.</p>
+      <div class="demo-area">
+<div class="auth-tabs"><input type="radio" name="authTab" id="tabLogin" checked class="auth-tab-input"><label for="tabLogin" class="auth-tab-label">Login</label><input type="radio" name="authTab" id="tabSignup" class="auth-tab-input"><label for="tabSignup" class="auth-tab-label">Sign Up</label><div class="auth-panel login-panel"><input type="text" placeholder="Username"><input type="password" placeholder="Password"><button style="width:100%;">Login</button></div><div class="auth-panel signup-panel"><input type="text" placeholder="Full Name"><input type="email" placeholder="Email"><input type="password" placeholder="Password"><button style="width:100%;">Sign Up</button></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 68 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage demonstrating pseudo-classes such as :hover, :active, :focus, and :visited</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+button:hover { background: var(--navy); } button:focus { outline: 3px solid var(--accent); } li:nth-child(even) { background: var(--light-blue); } li:first-child { font-weight: 700; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>25. Create a webpage demonstrating pseudo-classes such as :hover, :active, :focus, and :visited</h1>
+      <p class="description">Demonstrates :hover, :focus, :nth-child and :first-child pseudo-classes.</p>
+      <div class="demo-area">
+<button>Hover / focus me</button><ul><li>Item 1</li><li>Item 2 (nth-child even)</li><li>Item 3</li><li>Item 4 (nth-child even)</li></ul>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 25 of 425</footer>
+
+</body>
+</html>

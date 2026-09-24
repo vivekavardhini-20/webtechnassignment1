@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a form that calculates and displays age from date of birth</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>310. Create a form that calculates and displays age from date of birth</h1>
+      <p class="description">Calculates a person's exact age in years, months and days from their date of birth.</p>
+      <div class="demo-area">
+<div class="demo-form"><label for="dobInput">Date of Birth</label><input type="date" id="dobInput"><button onclick="calculateAge()">Calculate Age</button></div><div class="box" id="ageResult" style="margin-top:14px;"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 310 of 425</footer>
+<script>
+function calculateAge() {
+  const dobValue = document.getElementById('dobInput').value;
+  const resultBox = document.getElementById('ageResult');
+  if (!dobValue) { resultBox.textContent = 'Please select your date of birth.'; return; }
+  const dob = new Date(dobValue);
+  const today = new Date();
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
+  if (days < 0) {
+    months--;
+    days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+  }
+  if (months < 0) { years--; months += 12; }
+  resultBox.textContent = `You are ${years} years, ${months} months, and ${days} days old.`;
+}
+</script>
+</body>
+</html>

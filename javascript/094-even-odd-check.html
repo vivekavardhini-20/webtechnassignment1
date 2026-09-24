@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to check whether a number is even or odd</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>94. Write a program to check whether a number is even or odd</h1>
+      <p class="description">Uses the modulus operator to determine whether a number is even or odd.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="evenOddInput" value="7"><button onclick="checkEvenOdd()">Check</button></div><div class="box" id="evenOddOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 94 of 425</footer>
+<script>
+function checkEvenOdd() {
+  const n = Number(document.getElementById('evenOddInput').value);
+  document.getElementById('evenOddOut').textContent = n + ' is ' + (n % 2 === 0 ? 'Even' : 'Odd');
+}
+checkEvenOdd();
+</script>
+</body>
+</html>

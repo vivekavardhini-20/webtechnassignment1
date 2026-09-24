@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clear all localStorage data</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>340. Clear all localStorage data</h1>
+      <p class="description">Demonstrates wiping every key stored in localStorage at once using localStorage.clear().</p>
+      <div class="demo-area">
+<button onclick="localStorage.setItem('demoKey1','a'); localStorage.setItem('demoKey2','b'); updateClearDemo();">Add Sample Data</button><button onclick="localStorage.clear(); updateClearDemo();">Clear All</button><pre id="clearAllOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 340 of 425</footer>
+<script>
+function updateClearDemo() {
+  document.getElementById('clearAllOut').textContent = `localStorage now has ${localStorage.length} key(s).`;
+}
+updateClearDemo();
+</script>
+</body>
+</html>

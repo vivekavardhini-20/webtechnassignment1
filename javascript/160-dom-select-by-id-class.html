@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate getElementById() and getElementsByClassName()</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>160. Demonstrate getElementById() and getElementsByClassName()</h1>
+      <p class="description">Demonstrates selecting elements by their ID (returns one element) versus by class (returns a live collection).</p>
+      <div class="demo-area">
+<div id="uniqueEl" class="box highlight-target">ID: uniqueEl</div><div class="box highlight-target">Class item 1</div><div class="box highlight-target">Class item 2</div><button onclick="runSelectDemo()">Highlight via Selectors</button>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 160 of 425</footer>
+<script>
+function runSelectDemo() {
+  const byId = document.getElementById('uniqueEl');
+  byId.style.background = 'var(--accent)'; byId.style.color = '#fff';
+  const byClass = document.getElementsByClassName('highlight-target');
+  for (let el of byClass) { el.style.border = '2px solid var(--navy)'; }
+  alert(`getElementById found 1 element. getElementsByClassName found ${byClass.length} elements.`);
+}
+</script>
+</body>
+</html>

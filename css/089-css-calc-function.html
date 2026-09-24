@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage demonstrating CSS calc() function</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.calc-container { display: flex; gap: 8px; } .calc-sidebar { width: 150px; background: var(--navy); color: #fff; padding: 16px; border-radius: 6px; } .calc-main { width: calc(100% - 150px - 8px); background: var(--blue); color: #fff; padding: 16px; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>89. Create a webpage demonstrating CSS calc() function</h1>
+      <p class="description">Demonstrates using calc() to mix units, such as full width minus a fixed sidebar.</p>
+      <div class="demo-area">
+<div class="calc-container"><div class="calc-sidebar">Sidebar (150px)</div><div class="calc-main">Main: width = calc(100% - 150px)</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 89 of 425</footer>
+
+</body>
+</html>

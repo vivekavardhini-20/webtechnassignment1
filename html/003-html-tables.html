@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using tables with rows, columns, borders, and merged cells</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
+th { background: var(--navy); color: #fff; }
+tr:nth-child(even) { background: var(--light-blue); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>HTML Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>3. Create a webpage using tables with rows, columns, borders, and merged cells</h1>
+      <p class="description">Demonstrates table structure using table, tr, th and td, including a merged cell with colspan.</p>
+      <div class="demo-area">
+<table>
+  <thead><tr><th>Day</th><th>Period 1</th><th>Period 2</th><th>Period 3</th></tr></thead>
+  <tbody>
+    <tr><td>Monday</td><td>DSA</td><td>DAA</td><td>Web Technology</td></tr>
+    <tr><td>Tuesday</td><td>Python</td><td>Power BI</td><td>Embedded Systems</td></tr>
+    <tr><td>Wednesday</td><td colspan="3">College Holiday</td></tr>
+  </tbody>
+</table>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to HTML Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>HTML Programs &mdash; Question 3 of 425</footer>
+
+</body>
+</html>

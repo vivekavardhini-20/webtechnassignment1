@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to generate the Fibonacci series</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>97. Write a program to generate the Fibonacci series</h1>
+      <p class="description">Generates the first N terms of the Fibonacci sequence, where each term is the sum of the previous two.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="fibCount" value="10" min="1"><button onclick="generateFibonacci()">Generate</button></div><pre id="fibOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 97 of 425</footer>
+<script>
+function generateFibonacci() {
+  const count = parseInt(document.getElementById('fibCount').value, 10);
+  const series = [0, 1];
+  while (series.length < count) series.push(series[series.length - 1] + series[series.length - 2]);
+  document.getElementById('fibOut').textContent = series.slice(0, count).join(', ');
+}
+generateFibonacci();
+</script>
+</body>
+</html>

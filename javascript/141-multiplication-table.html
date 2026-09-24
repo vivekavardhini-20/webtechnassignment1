@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to generate the multiplication table of a given number</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>141. Write a program to generate the multiplication table of a given number</h1>
+      <p class="description">Generates the multiplication table (1 to 10) for a given number using a loop.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="tableInput" value="7"><button onclick="generateTable2()">Generate</button></div><pre id="tableOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 141 of 425</footer>
+<script>
+function generateTable2() {
+  const n = Number(document.getElementById('tableInput').value);
+  let lines = [];
+  for (let i = 1; i <= 10; i++) lines.push(`${n} x ${i} = ${n * i}`);
+  document.getElementById('tableOut').textContent = lines.join('\n');
+}
+generateTable2();
+</script>
+</body>
+</html>

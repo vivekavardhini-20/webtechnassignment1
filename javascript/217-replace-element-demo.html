@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Replace an existing HTML element with a new element</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>217. Replace an existing HTML element with a new element</h1>
+      <p class="description">Demonstrates swapping out one DOM element for a completely new one using replaceChild().</p>
+      <div class="demo-area">
+<div id="replaceContainer"><p id="oldElement">I am the old element</p></div><button onclick="replaceElementDemo()">Replace Element</button>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 217 of 425</footer>
+<script>
+function replaceElementDemo() {
+  const oldEl = document.getElementById('oldElement');
+  if (!oldEl) return;
+  const newEl = document.createElement('h3');
+  newEl.id = 'oldElement';
+  newEl.style.color = 'var(--accent)';
+  newEl.textContent = 'I am the brand new element!';
+  oldEl.parentNode.replaceChild(newEl, oldEl);
+}
+</script>
+</body>
+</html>

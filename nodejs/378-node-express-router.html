@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create multiple routes using Express Router</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>378. Create multiple routes using Express Router</h1>
+      <p class="description">Demonstrates grouping related routes together using express.Router() as a mini, mountable app.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">// ---- routes/products.js ----
+const express = require(&#x27;express&#x27;);
+const router = express.Router();
+
+router.get(&#x27;/&#x27;, (req, res) =&gt; res.send(&#x27;List all products&#x27;));
+router.get(&#x27;/:id&#x27;, (req, res) =&gt; res.send(`Product details for ID ${req.params.id}`));
+router.post(&#x27;/&#x27;, (req, res) =&gt; res.send(&#x27;Create a new product&#x27;));
+
+module.exports = router;
+
+// ---- server.js ----
+const express = require(&#x27;express&#x27;);
+const app = express();
+const productRoutes = require(&#x27;./routes/products&#x27;);
+
+app.use(&#x27;/products&#x27;, productRoutes); // all routes above are now prefixed with /products
+app.listen(3000, () =&gt; console.log(&#x27;Server running on port 3000&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 378 of 425</footer>
+
+</body>
+</html>

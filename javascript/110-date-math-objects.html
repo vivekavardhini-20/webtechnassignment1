@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program demonstrating Date and Math objects</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>110. Write a program demonstrating Date and Math objects</h1>
+      <p class="description">Demonstrates built-in Date methods (current date/time) and Math methods (round, random, sqrt).</p>
+      <div class="demo-area">
+<pre id="dateMathOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 110 of 425</footer>
+<script>
+const now = new Date();
+document.getElementById('dateMathOut').textContent =
+`Date.now() readable: ${now.toLocaleString()}
+Math.round(4.7): ${Math.round(4.7)}
+Math.sqrt(81): ${Math.sqrt(81)}
+Math.random() sample: ${Math.random().toFixed(4)}
+Math.max(3,9,2): ${Math.max(3, 9, 2)}`;
+</script>
+</body>
+</html>

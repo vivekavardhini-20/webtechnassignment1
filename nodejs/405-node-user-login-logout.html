@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Implement User Login and Logout</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>405. Implement User Login and Logout</h1>
+      <p class="description">Demonstrates verifying a user's password on login and clearing their session on logout.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const bcrypt = require(&#x27;bcrypt&#x27;);
+
+app.post(&#x27;/login&#x27;, async (req, res) =&gt; {
+  const { username, password } = req.body;
+  const user = users.find(u =&gt; u.username === username);
+  if (!user) return res.status(401).json({ error: &#x27;Invalid credentials&#x27; });
+
+  const passwordMatches = await bcrypt.compare(password, user.password);
+  if (!passwordMatches) return res.status(401).json({ error: &#x27;Invalid credentials&#x27; });
+
+  req.session.user = username;
+  res.json({ message: &#x27;Login successful&#x27; });
+});
+
+app.post(&#x27;/logout&#x27;, (req, res) =&gt; {
+  req.session.destroy(() =&gt; res.json({ message: &#x27;Logged out&#x27; }));
+});</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 405 of 425</footer>
+
+</body>
+</html>

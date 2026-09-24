@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a mobile-first responsive webpage</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.mf-card { background: var(--navy); color: #fff; padding: 14px; border-radius: 8px; width: 100%; text-align: center; } @media (min-width: 600px) { .mf-card { width: 70%; padding: 20px; margin: 0 auto; } } @media (min-width: 900px) { .mf-card { width: 40%; padding: 30px; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>79. Create a mobile-first responsive webpage</h1>
+      <p class="description">Demonstrates the mobile-first approach: base styles target small screens, then min-width media queries progressively enhance for larger screens.</p>
+      <div class="demo-area">
+<div class="mf-card">Mobile-first Card</div><p style="color:var(--muted); margin-top:10px;">Base style is a full-width card; min-width queries add padding and shrink it on larger screens.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 79 of 425</footer>
+
+</body>
+</html>

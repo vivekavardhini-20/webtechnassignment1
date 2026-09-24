@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a tooltip dynamically</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>239. Create a tooltip dynamically</h1>
+      <p class="description">Demonstrates creating and positioning a tooltip element dynamically with JavaScript on mouseover.</p>
+      <div class="demo-area">
+<button id="jsTooltipTrigger" onmouseover="showJsTooltip(event)" onmouseout="hideJsTooltip()">Hover for JS Tooltip</button><div id="jsTooltip" style="display:none; position:fixed; background:var(--navy); color:#fff; padding:6px 10px; border-radius:6px; font-size:0.8rem; pointer-events:none;"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 239 of 425</footer>
+<script>
+function showJsTooltip(e) {
+  const tip = document.getElementById('jsTooltip');
+  tip.textContent = 'Created dynamically with JS!';
+  tip.style.left = (e.clientX + 10) + 'px';
+  tip.style.top = (e.clientY + 10) + 'px';
+  tip.style.display = 'block';
+}
+function hideJsTooltip() { document.getElementById('jsTooltip').style.display = 'none'; }
+</script>
+</body>
+</html>

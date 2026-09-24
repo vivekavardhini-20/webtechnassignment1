@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a card-based layout using Flexbox</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.grow-row { display: flex; gap: 8px; background: var(--light-blue); padding: 10px; border-radius: 8px; } .grow-row > div { background: var(--blue); color: #fff; padding: 10px; border-radius: 6px; text-align:center; } .fixed { flex: 0 0 80px; } .grows1 { flex-grow: 1; } .grows2 { flex-grow: 2; background: var(--accent); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>61. Create a card-based layout using Flexbox</h1>
+      <p class="description">Demonstrates how flex-grow distributes extra space and flex-basis sets a starting size.</p>
+      <div class="demo-area">
+<div class="grow-row"><div class="fixed">Fixed 80px</div><div class="grows1">flex-grow: 1</div><div class="grows2">flex-grow: 2 (grows more)</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 61 of 425</footer>
+
+</body>
+</html>

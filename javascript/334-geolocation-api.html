@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display the user's current geographical coordinates using the Geolocation API</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>334. Display the user's current geographical coordinates using the Geolocation API</h1>
+      <p class="description">Demonstrates requesting the user's current location coordinates using navigator.geolocation (requires permission).</p>
+      <div class="demo-area">
+<button onclick="getLocation()">Get My Location</button><pre id="geoOutput">Click the button and allow location access.</pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 334 of 425</footer>
+<script>
+function getLocation() {
+  const output = document.getElementById('geoOutput');
+  if (!navigator.geolocation) { output.textContent = 'Geolocation is not supported by this browser.'; return; }
+  output.textContent = 'Requesting location...';
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      output.textContent =
+`Latitude: ${position.coords.latitude}
+Longitude: ${position.coords.longitude}
+Accuracy: ${position.coords.accuracy} meters`;
+    },
+    (error) => { output.textContent = 'Could not get location: ' + error.message; }
+  );
+}
+</script>
+</body>
+</html>

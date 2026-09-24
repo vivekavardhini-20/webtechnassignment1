@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate z-index and stacking order</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.stack-container { position: relative; height: 140px; } .stack-box { position: absolute; width: 140px; height: 90px; border-radius: 8px; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; } .z1 { background: var(--blue); top: 10px; left: 10px; z-index: 1; } .z2 { background: var(--accent); top: 40px; left: 50px; z-index: 2; } .z3 { background: var(--navy); top: 70px; left: 90px; z-index: 3; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>51. Demonstrate z-index and stacking order</h1>
+      <p class="description">Demonstrates how z-index controls the stacking order of overlapping positioned elements.</p>
+      <div class="demo-area">
+<div class="stack-container"><div class="stack-box z1">z-index: 1</div><div class="stack-box z3">z-index: 3 (on top)</div><div class="stack-box z2">z-index: 2</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 51 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a dependent dropdown - Country to State to City</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>231. Create a dependent dropdown - Country to State to City</h1>
+      <p class="description">Demonstrates a cascading (dependent) dropdown where selecting a country dynamically populates its states.</p>
+      <div class="demo-area">
+<div class="row"><select id="countrySelect" onchange="updateStates()"><option value="">Select Country</option><option value="India">India</option><option value="USA">USA</option></select><select id="stateSelect"><option value="">Select State</option></select></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 231 of 425</footer>
+<script>
+const statesByCountry = {
+  India: ['Andhra Pradesh', 'Tamil Nadu', 'Karnataka', 'Maharashtra'],
+  USA: ['California', 'Texas', 'New York', 'Florida']
+};
+function updateStates() {
+  const country = document.getElementById('countrySelect').value;
+  const stateSelect = document.getElementById('stateSelect');
+  stateSelect.innerHTML = '<option value="">Select State</option>';
+  (statesByCountry[country] || []).forEach(state => {
+    const opt = document.createElement('option');
+    opt.value = state; opt.textContent = state;
+    stateSelect.appendChild(opt);
+  });
+}
+</script>
+</body>
+</html>

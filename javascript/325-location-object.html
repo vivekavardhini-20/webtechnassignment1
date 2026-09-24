@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display the current webpage URL using JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>325. Display the current webpage URL using JavaScript</h1>
+      <p class="description">Demonstrates reading URL information from the location object, such as protocol, hostname and pathname.</p>
+      <div class="demo-area">
+<pre id="locInfo"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 325 of 425</footer>
+<script>
+document.getElementById('locInfo').textContent =
+`href: ${location.href}
+protocol: ${location.protocol}
+hostname: ${location.hostname || '(local file)'}
+pathname: ${location.pathname}
+search: ${location.search || '(none)'}
+hash: ${location.hash || '(none)'}`;
+</script>
+</body>
+</html>

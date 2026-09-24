@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a sliding image/card animation using CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.slide-track { background: var(--light-blue); border-radius: 8px; padding: 10px; overflow: hidden; } .slide-box { width: 50px; height: 50px; background: var(--accent); border-radius: 8px; animation: slideBack 3s ease-in-out infinite; } @keyframes slideBack { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(200px); } }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>84. Create a sliding image/card animation using CSS</h1>
+      <p class="description">Demonstrates an element that continuously slides back and forth using @keyframes and translateX.</p>
+      <div class="demo-area">
+<div class="slide-track"><div class="slide-box"></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 84 of 425</footer>
+
+</body>
+</html>

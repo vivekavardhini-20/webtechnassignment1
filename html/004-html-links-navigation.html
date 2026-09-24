@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an HTML page containing images and hyperlinks</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.navbar { display: flex; gap: 4px; background: var(--navy); border-radius: 8px; overflow: hidden; }
+.navbar a { flex: 1; text-align: center; padding: 12px; color: #fff; text-decoration: none; }
+.navbar a:hover { background: var(--blue); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>HTML Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>4. Create an HTML page containing images and hyperlinks</h1>
+      <p class="description">Demonstrates internal links, external links, anchor/jump links and a simple navigation bar.</p>
+      <div class="demo-area">
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="index.html">HTML Programs</a>
+  <a href="#section2">Jump to Section 2</a>
+  <a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN (external)</a>
+</nav>
+<h3 style="margin-top:30px;">Section 1</h3>
+<p>This is the first section of the page.</p>
+<h3 id="section2">Section 2</h3>
+<p>You reached Section 2 via an anchor link (href="#section2").</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to HTML Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>HTML Programs &mdash; Question 4 of 425</footer>
+
+</body>
+</html>

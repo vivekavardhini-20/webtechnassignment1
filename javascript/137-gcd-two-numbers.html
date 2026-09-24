@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the greatest common divisor (GCD) of two numbers</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>137. Write a program to find the greatest common divisor (GCD) of two numbers</h1>
+      <p class="description">Calculates the Greatest Common Divisor using the Euclidean algorithm.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="gcdA" value="48"><input type="number" id="gcdB" value="18"><button onclick="calcGCD()">Find GCD</button></div><div class="box" id="gcdOut"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 137 of 425</footer>
+<script>
+function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+function calcGCD() {
+  const a = Number(document.getElementById('gcdA').value);
+  const b = Number(document.getElementById('gcdB').value);
+  document.getElementById('gcdOut').textContent = `GCD of ${a} and ${b} = ${gcd(a, b)}`;
+}
+calcGCD();
+</script>
+</body>
+</html>

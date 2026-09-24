@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a complete interactive webpage using HTML, CSS, and JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.mini-portfolio { background: #fff; border-radius: 14px; padding: 22px; box-shadow: 0 4px 16px rgba(31,56,100,0.1); }
+.mp-header { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+.mp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 16px; }
+.mp-tags span { background: var(--light-blue); color: var(--navy); padding: 4px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>135. Create a complete interactive webpage using HTML, CSS, and JavaScript</h1>
+      <p class="description">A complete personal portfolio section built from the student's own resume details — including a profile photo placeholder (Canvas), an intro video slot, skills, and education — combining HTML structure with the image/audio/video elements above into one cohesive page.</p>
+      <div class="demo-area">
+<div class="mini-portfolio">
+  <div class="mp-header">
+    <canvas id="mpAvatar" width="90" height="90" style="border-radius:50%;"></canvas>
+    <div>
+      <h2>Shaik Abdulkalam</h2>
+      <p>Aspiring Software Developer | Full-Stack Development</p>
+      <p style="color:var(--muted); font-size:0.9rem;">Rayachoti, Andhra Pradesh · shaikabdulkalam959@gmail.com</p>
+    </div>
+  </div>
+
+  <h3>About</h3>
+  <p>B.Tech CSE (AI/ML) undergraduate at Sai University, Chennai (CGPA 8.28), with a strong foundation
+  in C, C++, Python, DSA, DAA, and full-stack web development.</p>
+
+  <h3>Skills</h3>
+  <div class="mp-tags"><span>C</span><span>C++</span><span>Python</span><span>JavaScript</span><span>HTML/CSS</span><span>Power BI</span><span>n8n</span></div>
+
+  <h3>Intro Video</h3>
+  <video width="100%" style="max-width:360px; border-radius:8px;" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Video requires an internet connection for this demo clip.
+  </video>
+
+  <h3>Contact</h3>
+  <p>📞 +91 7996199470 &nbsp; | &nbsp; ✉️ shaikabdulkalam959@gmail.com</p>
+</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 135 of 425</footer>
+<script>
+const avatarCtx = document.getElementById('mpAvatar').getContext('2d');
+avatarCtx.fillStyle = '#2e5aac'; avatarCtx.beginPath(); avatarCtx.arc(45, 45, 45, 0, Math.PI * 2); avatarCtx.fill();
+avatarCtx.fillStyle = '#fff'; avatarCtx.font = 'bold 28px Arial'; avatarCtx.textAlign = 'center'; avatarCtx.textBaseline = 'middle';
+avatarCtx.fillText('SA', 45, 48);
+</script>
+</body>
+</html>

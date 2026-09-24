@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to merge two arrays</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>146. Write a program to merge two arrays</h1>
+      <p class="description">Merges two arrays using the spread operator and concat(), then removes duplicates.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="mergeA" value="1,2,3"><input type="text" id="mergeB" value="3,4,5"><button onclick="mergeArrays()">Merge</button></div><pre id="mergeOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 146 of 425</footer>
+<script>
+function mergeArrays() {
+  const a = document.getElementById('mergeA').value.split(',').map(Number);
+  const b = document.getElementById('mergeB').value.split(',').map(Number);
+  const merged = [...a, ...b];
+  const mergedUnique = [...new Set(merged)];
+  document.getElementById('mergeOut').textContent = `Array A: [${a.join(', ')}]\nArray B: [${b.join(', ')}]\nMerged: [${merged.join(', ')}]\nMerged (unique): [${mergedUnique.join(', ')}]`;
+}
+mergeArrays();
+</script>
+</body>
+</html>

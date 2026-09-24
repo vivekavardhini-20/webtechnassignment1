@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Protected API Routes using authentication</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>409. Create Protected API Routes using authentication</h1>
+      <p class="description">Demonstrates applying the JWT verification middleware to protect a specific route.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">// (Assumes verifyToken middleware from the JWT example above)
+
+app.get(&#x27;/api/profile&#x27;, verifyToken, (req, res) =&gt; {
+  res.json({ message: `Welcome, ${req.user.username}!`, data: &#x27;This is protected data.&#x27; });
+});
+
+app.get(&#x27;/api/public&#x27;, (req, res) =&gt; {
+  res.json({ message: &#x27;This route is open to everyone.&#x27; });
+});</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 409 of 425</footer>
+
+</body>
+</html>

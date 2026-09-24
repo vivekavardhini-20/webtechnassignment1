@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage using different width, height, and sizing properties</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.ratio-box { background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 10px; font-weight: 700; } .ratio-16-9 { aspect-ratio: 16 / 9; width: 240px; } .ratio-1-1 { aspect-ratio: 1 / 1; width: 100px; background: var(--accent); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>21. Create a webpage using different width, height, and sizing properties</h1>
+      <p class="description">Demonstrates keeping an element at a fixed proportional shape (like 16:9) using the aspect-ratio property.</p>
+      <div class="demo-area">
+<div class="ratio-box ratio-16-9">16:9</div><div class="ratio-box ratio-1-1">1:1</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 21 of 425</footer>
+
+</body>
+</html>

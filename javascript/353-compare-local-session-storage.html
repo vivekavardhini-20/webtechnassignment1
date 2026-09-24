@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare localStorage and sessionStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>353. Compare localStorage and sessionStorage</h1>
+      <p class="description">A side-by-side demonstration: localStorage persists after closing the tab, sessionStorage does not.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="compareInput" placeholder="Enter a value"><button onclick="saveToBoth()">Save to Both</button></div><pre id="compareOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 353 of 425</footer>
+<script>
+function saveToBoth() {
+  const value = document.getElementById('compareInput').value;
+  localStorage.setItem('compareDemo', value);
+  sessionStorage.setItem('compareDemo', value);
+  renderCompare();
+}
+function renderCompare() {
+  document.getElementById('compareOut').textContent =
+`localStorage value: ${localStorage.getItem('compareDemo') || '(none)'}  (survives closing the browser)
+sessionStorage value: ${sessionStorage.getItem('compareDemo') || '(none)'}  (cleared when this tab closes)`;
+}
+renderCompare();
+</script>
+</body>
+</html>

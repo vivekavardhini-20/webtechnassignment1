@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add options dynamically to a select element</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>230. Add options dynamically to a select element</h1>
+      <p class="description">Demonstrates adding options to a select dropdown dynamically using JavaScript.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="dropOptionInput" placeholder="New option text"><button onclick="addDropdownOption()">Add Option</button></div><select id="dynamicDropdown"><option>-- Select --</option></select>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 230 of 425</footer>
+<script>
+function addDropdownOption() {
+  const text = document.getElementById('dropOptionInput').value.trim();
+  if (!text) return;
+  const option = document.createElement('option');
+  option.textContent = text; option.value = text;
+  document.getElementById('dynamicDropdown').appendChild(option);
+  document.getElementById('dropOptionInput').value = '';
+}
+</script>
+</body>
+</html>

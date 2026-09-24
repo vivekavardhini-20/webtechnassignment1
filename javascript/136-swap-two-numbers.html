@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a JavaScript program to swap two numbers</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>136. Write a JavaScript program to swap two numbers</h1>
+      <p class="description">Swaps two variable values using a temporary variable, and also shows the destructuring one-liner.</p>
+      <div class="demo-area">
+<div class="row"><input type="number" id="swapA" value="5"><input type="number" id="swapB" value="10"><button onclick="swapNumbers()">Swap</button></div><pre id="swapOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 136 of 425</footer>
+<script>
+function swapNumbers() {
+  let a = Number(document.getElementById('swapA').value);
+  let b = Number(document.getElementById('swapB').value);
+  const before = `Before: a=${a}, b=${b}`;
+  let temp = a; a = b; b = temp;
+  const after = `After (temp variable): a=${a}, b=${b}`;
+  [a, b] = [b, a]; // ES6 destructuring swap (one line)
+  document.getElementById('swapOut').textContent = `${before}\n${after}\nAfter destructuring swap again: a=${a}, b=${b}`;
+}
+swapNumbers();
+</script>
+</body>
+</html>

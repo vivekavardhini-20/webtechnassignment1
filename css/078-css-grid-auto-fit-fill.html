@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a responsive layout using CSS Grid and media queries</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.responsive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; } .responsive-grid > div { background: var(--blue); color: #fff; padding: 20px; border-radius: 6px; text-align: center; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>78. Create a responsive layout using CSS Grid and media queries</h1>
+      <p class="description">Demonstrates a responsive grid that automatically adds or removes columns using repeat(auto-fit, minmax()).</p>
+      <div class="demo-area">
+<div class="responsive-grid"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div></div><p style="color:var(--muted); margin-top:10px;">Resize the browser window to see columns reflow automatically.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 78 of 425</footer>
+
+</body>
+</html>

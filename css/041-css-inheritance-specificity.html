@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a webpage demonstrating CSS inheritance and specificity</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+p { color: blue; } .spec-demo { color: green; } #specDemo { color: var(--accent); } .inherit-parent { color: var(--navy); font-family: Georgia, serif; padding: 14px; border: 1px solid var(--border); border-radius: 8px; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>41. Create a webpage demonstrating CSS inheritance and specificity</h1>
+      <p class="description">Demonstrates how child elements inherit properties from parents, and how specificity (ID &gt; class &gt; element) decides which conflicting rule wins.</p>
+      <div class="demo-area">
+<div class="inherit-parent">Parent sets color and font-family, inherited by children below.<p>Inherited paragraph (no explicit color set).</p><p class="spec-demo" id="specDemo">This paragraph has element, class AND id rules targeting its color — the ID wins (highest specificity).</p></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 41 of 425</footer>
+
+</body>
+</html>

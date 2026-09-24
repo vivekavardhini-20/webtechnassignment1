@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a marks entry form and calculate total, average, and grade</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>311. Create a marks entry form and calculate total, average, and grade</h1>
+      <p class="description">Calculates total, average and letter grade from marks entered for several subjects.</p>
+      <div class="demo-area">
+<textarea id="marksInput" rows="3" placeholder="Enter marks separated by commas, e.g. 85, 90, 78, 92">85, 90, 78, 92</textarea><button onclick="calculateGrade()">Calculate</button><pre id="gradeOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 311 of 425</footer>
+<script>
+function calculateGrade() {
+  const marks = document.getElementById('marksInput').value.split(',').map(s => parseFloat(s.trim())).filter(n => !isNaN(n));
+  if (marks.length === 0) { document.getElementById('gradeOut').textContent = 'Please enter valid marks.'; return; }
+  const total = marks.reduce((a, b) => a + b, 0);
+  const average = total / marks.length;
+  let grade;
+  if (average >= 90) grade = 'A+';
+  else if (average >= 80) grade = 'A';
+  else if (average >= 70) grade = 'B';
+  else if (average >= 60) grade = 'C';
+  else if (average >= 40) grade = 'D';
+  else grade = 'F';
+  document.getElementById('gradeOut').textContent = `Marks: [${marks.join(', ')}]\nTotal: ${total}\nAverage: ${average.toFixed(2)}\nGrade: ${grade}`;
+}
+calculateGrade();
+</script>
+</body>
+</html>

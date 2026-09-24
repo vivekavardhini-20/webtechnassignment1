@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate spread and rest operators</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>127. Demonstrate spread and rest operators</h1>
+      <p class="description">Demonstrates the spread operator (...) for expanding arrays/objects, and the rest operator for collecting arguments.</p>
+      <div class="demo-area">
+<pre id="spreadOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 127 of 425</footer>
+<script>
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2]; // spread
+
+function sumAll(...numbers) { // rest
+  return numbers.reduce((total, n) => total + n, 0);
+}
+
+document.getElementById('spreadOutput').textContent =
+`Spread - combined arrays: [${combined.join(', ')}]
+Rest - sumAll(1,2,3,4,5) = ${sumAll(1, 2, 3, 4, 5)}`;
+</script>
+</body>
+</html>

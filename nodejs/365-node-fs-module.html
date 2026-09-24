@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate the File System (fs) module</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>365. Demonstrate the File System (fs) module</h1>
+      <p class="description">Demonstrates reading from and writing to a file using Node's built-in 'fs' module, both synchronously and asynchronously.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const fs = require(&#x27;fs&#x27;);
+
+// Asynchronous write (non-blocking)
+fs.writeFile(&#x27;notes.txt&#x27;, &#x27;Hello from Node.js fs module!&#x27;, (err) =&gt; {
+  if (err) throw err;
+  console.log(&#x27;File written successfully (async).&#x27;);
+
+  // Asynchronous read
+  fs.readFile(&#x27;notes.txt&#x27;, &#x27;utf8&#x27;, (err, data) =&gt; {
+    if (err) throw err;
+    console.log(&#x27;File content (async):&#x27;, data);
+  });
+});
+
+// Synchronous version (blocking - simpler but pauses execution)
+fs.writeFileSync(&#x27;notes-sync.txt&#x27;, &#x27;Written synchronously&#x27;);
+const syncData = fs.readFileSync(&#x27;notes-sync.txt&#x27;, &#x27;utf8&#x27;);
+console.log(&#x27;File content (sync):&#x27;, syncData);</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 365 of 425</footer>
+
+</body>
+</html>

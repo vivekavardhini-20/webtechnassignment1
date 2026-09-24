@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a new HTML element dynamically and add it to the webpage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>215. Create a new HTML element dynamically and add it to the webpage</h1>
+      <p class="description">Demonstrates building new DOM elements from scratch with createElement/appendChild, and removing them with remove().</p>
+      <div class="demo-area">
+<div class="row"><button onclick="createCard()">Add Card</button><button onclick="clearCards()">Clear All</button></div><div id="cardContainer" style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 215 of 425</footer>
+<script>
+let cardCount = 0;
+function createCard() {
+  cardCount++;
+  const card = document.createElement('div');
+  card.className = 'box';
+  card.style.minWidth = '100px';
+  card.textContent = `Card ${cardCount}`;
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'x';
+  removeBtn.style.marginLeft = '8px';
+  removeBtn.style.marginTop = '6px';
+  removeBtn.onclick = () => card.remove();
+  card.appendChild(document.createElement('br'));
+  card.appendChild(removeBtn);
+  document.getElementById('cardContainer').appendChild(card);
+}
+function clearCards() { document.getElementById('cardContainer').innerHTML = ''; }
+</script>
+</body>
+</html>

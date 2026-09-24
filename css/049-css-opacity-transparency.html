@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate opacity and transparency using CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.opacity-row { display: flex; gap: 14px; flex-wrap: wrap; } .op-box { width: 160px; height: 90px; display: flex; align-items: center; justify-content: center; text-align: center; border-radius: 8px; color: #fff; font-weight: 700; padding: 10px; background: var(--navy); } .op-50 { opacity: 0.5; } .op-rgba { background: rgba(31, 56, 100, 0.5); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>49. Demonstrate opacity and transparency using CSS</h1>
+      <p class="description">Demonstrates the difference between the opacity property (fades the whole element including text) and an rgba() background (fades only the background, keeping text sharp).</p>
+      <div class="demo-area">
+<div class="opacity-row"><div class="op-box op-50">opacity: 0.5 (text also fades)</div><div class="op-box op-rgba">rgba background (text stays sharp)</div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 49 of 425</footer>
+
+</body>
+</html>

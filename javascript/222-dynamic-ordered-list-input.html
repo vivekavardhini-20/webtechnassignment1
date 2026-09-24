@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a dynamic ordered list from user input</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>222. Create a dynamic ordered list from user input</h1>
+      <p class="description">Demonstrates letting the user build up a numbered list item by item.</p>
+      <div class="demo-area">
+<div class="row"><input type="text" id="olInput" placeholder="Enter an item"><button onclick="addOlItem()">Add to List</button></div><ol id="userOlList"></ol>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 222 of 425</footer>
+<script>
+function addOlItem() {
+  const text = document.getElementById('olInput').value.trim();
+  if (!text) return;
+  const li = document.createElement('li');
+  li.textContent = text;
+  document.getElementById('userOlList').appendChild(li);
+  document.getElementById('olInput').value = '';
+}
+</script>
+</body>
+</html>

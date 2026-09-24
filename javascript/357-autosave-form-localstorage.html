@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restore previously entered form data after refreshing the page</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>357. Restore previously entered form data after refreshing the page</h1>
+      <p class="description">Demonstrates automatically saving form input to localStorage as the user types, and restoring it automatically when the page reloads.</p>
+      <div class="demo-area">
+<div class="demo-form"><label>Notes (auto-saved as you type)</label><textarea id="autosaveInput" rows="3" oninput="autosaveNotes()"></textarea></div><p id="autosaveOut" style="color:var(--muted);"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 357 of 425</footer>
+<script>
+function autosaveNotes() {
+  localStorage.setItem('autosavedNotes', document.getElementById('autosaveInput').value);
+  document.getElementById('autosaveOut').textContent = 'Auto-saved at ' + new Date().toLocaleTimeString();
+}
+// Restore on load - try refreshing this page after typing something!
+document.getElementById('autosaveInput').value = localStorage.getItem('autosavedNotes') || '';
+</script>
+</body>
+</html>

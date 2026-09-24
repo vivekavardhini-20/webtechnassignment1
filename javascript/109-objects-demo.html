@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program demonstrating objects in JavaScript</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>109. Write a program demonstrating objects in JavaScript</h1>
+      <p class="description">Demonstrates creating an object literal, accessing properties, and adding a method.</p>
+      <div class="demo-area">
+<pre id="objectsDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 109 of 425</footer>
+<script>
+const car = {
+  brand: 'Toyota', model: 'Corolla', year: 2023,
+  describe() { return `${this.brand} ${this.model} (${this.year})`; }
+};
+document.getElementById('objectsDemoOut').textContent =
+`car.brand: ${car.brand}\ncar.describe(): ${car.describe()}`;
+</script>
+</body>
+</html>

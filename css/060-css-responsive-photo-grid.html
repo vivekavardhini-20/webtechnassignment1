@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a responsive image gallery using CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; } .g-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(31,56,100,0.1); text-align: center; transition: transform 0.2s ease; } .g-card:hover { transform: translateY(-6px); } .g-thumb { height: 80px; } .g-card p { margin: 8px 0; font-weight: 600; color: var(--navy); }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>60. Create a responsive image gallery using CSS</h1>
+      <p class="description">A practical mini-project combining Grid, box-shadow, border-radius and hover transitions to build a responsive photo/card gallery.</p>
+      <div class="demo-area">
+<div class="gallery"><div class="g-card"><div class="g-thumb" style="background:#2e5aac;"></div><p>Card 1</p></div><div class="g-card"><div class="g-thumb" style="background:#ff7a45;"></div><p>Card 2</p></div><div class="g-card"><div class="g-thumb" style="background:#1e8449;"></div><p>Card 3</p></div><div class="g-card"><div class="g-thumb" style="background:#1f3864;"></div><p>Card 4</p></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 60 of 425</footer>
+
+</body>
+</html>

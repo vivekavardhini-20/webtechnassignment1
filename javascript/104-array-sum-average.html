@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to find the sum and average of array elements</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>104. Write a program to find the sum and average of array elements</h1>
+      <p class="description">Uses reduce() to calculate the total, then divides by array length for the average.</p>
+      <div class="demo-area">
+<input type="text" id="sumAvgInput" value="10, 20, 30, 40, 50"><button onclick="sumAverage()">Calculate</button><pre id="sumAvgOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 104 of 425</footer>
+<script>
+function sumAverage() {
+  const arr = document.getElementById('sumAvgInput').value.split(',').map(Number);
+  const sum = arr.reduce((a, b) => a + b, 0);
+  const avg = sum / arr.length;
+  document.getElementById('sumAvgOut').textContent = `Array: [${arr.join(', ')}]\nSum: ${sum}\nAverage: ${avg.toFixed(2)}`;
+}
+sumAverage();
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a notes application using localStorage</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.note-card { background: #fff9c4; border-radius: 6px; padding: 10px; width: 130px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>206. Create a notes application using localStorage</h1>
+      <p class="description">A simple sticky-notes app where each note is saved to localStorage, so notes persist after closing the browser.</p>
+      <div class="demo-area">
+<textarea id="noteInput" rows="2" placeholder="Write a note..."></textarea><button onclick="addNote()">Save Note</button><div id="notesContainer" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 206 of 425</footer>
+<script>
+function getNotes() { return JSON.parse(localStorage.getItem('stickyNotes') || '[]'); }
+function addNote() {
+  const text = document.getElementById('noteInput').value.trim();
+  if (!text) return;
+  const notes = getNotes(); notes.push(text);
+  localStorage.setItem('stickyNotes', JSON.stringify(notes));
+  document.getElementById('noteInput').value = '';
+  renderNotes();
+}
+function renderNotes() {
+  const container = document.getElementById('notesContainer');
+  container.innerHTML = '';
+  getNotes().forEach(note => {
+    const div = document.createElement('div');
+    div.className = 'note-card';
+    div.textContent = note;
+    container.appendChild(div);
+  });
+}
+renderNotes();
+</script>
+</body>
+</html>

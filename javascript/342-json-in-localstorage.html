@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store an array in localStorage using JSON</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>342. Store an array in localStorage using JSON</h1>
+      <p class="description">Demonstrates converting a JavaScript object to a JSON string with JSON.stringify() to store it, then parsing it back with JSON.parse().</p>
+      <div class="demo-area">
+<div class="demo-form"><label for="jsName">Name</label><input type="text" id="jsName" value="Shaik Abdulkalam"><label for="jsCourse">Course</label><input type="text" id="jsCourse" value="B.Tech CSE AI/ML"><button onclick="saveProfile()">Save Profile Object</button><button onclick="loadProfile()">Load Profile Object</button></div><pre id="jsonOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 342 of 425</footer>
+<script>
+function saveProfile() {
+  const profile = { name: document.getElementById('jsName').value, course: document.getElementById('jsCourse').value, savedAt: new Date().toLocaleTimeString() };
+  localStorage.setItem('studentProfile', JSON.stringify(profile));
+  document.getElementById('jsonOutput').textContent = 'Saved as JSON string:\n' + localStorage.getItem('studentProfile');
+}
+function loadProfile() {
+  const raw = localStorage.getItem('studentProfile');
+  if (!raw) { document.getElementById('jsonOutput').textContent = 'No profile saved yet.'; return; }
+  const profile = JSON.parse(raw);
+  document.getElementById('jsonOutput').textContent = 'Parsed back into an object:\n' + JSON.stringify(profile, null, 2);
+}
+</script>
+</body>
+</html>

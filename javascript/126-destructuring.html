@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate ES6 let, const, template literals, and destructuring</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>126. Demonstrate ES6 let, const, template literals, and destructuring</h1>
+      <p class="description">Demonstrates extracting values from arrays and objects into individual variables using destructuring syntax.</p>
+      <div class="demo-area">
+<pre id="destructOutput"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 126 of 425</footer>
+<script>
+const coordinates = [12, 45];
+const [x, y] = coordinates;
+
+const student = { name: 'Shaik', course: 'AI/ML', cgpa: 8.28 };
+const { name, cgpa } = student;
+
+const [first, , third] = ['a', 'b', 'c']; // skipping an element
+
+document.getElementById('destructOutput').textContent =
+`Array destructuring: x=${x}, y=${y}
+Object destructuring: name=${name}, cgpa=${cgpa}
+Skipping elements: first=${first}, third=${third}`;
+</script>
+</body>
+</html>

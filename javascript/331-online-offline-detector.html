@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detect whether the browser is online or offline</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>331. Detect whether the browser is online or offline</h1>
+      <p class="description">Demonstrates listening for the browser's online/offline events and reacting live.</p>
+      <div class="demo-area">
+<div class="box" id="onlineStatusBox"></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 331 of 425</footer>
+<script>
+function updateOnlineStatus() {
+  const box = document.getElementById('onlineStatusBox');
+  box.textContent = navigator.onLine ? '🟢 You are Online' : '🔴 You are Offline';
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program demonstrating strings and string methods</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>107. Write a program demonstrating strings and string methods</h1>
+      <p class="description">Demonstrates common string methods on a sample sentence.</p>
+      <div class="demo-area">
+<pre id="stringsDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 107 of 425</footer>
+<script>
+const sentence = "JavaScript is fun to learn";
+document.getElementById('stringsDemoOut').textContent =
+`Original: "${sentence}"
+length: ${sentence.length}
+toUpperCase(): "${sentence.toUpperCase()}"
+indexOf("fun"): ${sentence.indexOf('fun')}
+includes("learn"): ${sentence.includes('learn')}
+split(" "): ${JSON.stringify(sentence.split(' '))}`;
+</script>
+</body>
+</html>

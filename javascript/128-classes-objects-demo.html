@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate classes and objects</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>128. Demonstrate classes and objects</h1>
+      <p class="description">Demonstrates the ES6 class syntax for creating object blueprints with a constructor and methods.</p>
+      <div class="demo-area">
+<pre id="classDemoOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 128 of 425</footer>
+<script>
+class Student {
+  constructor(name, cgpa) { this.name = name; this.cgpa = cgpa; }
+  describe() { return `${this.name} has a CGPA of ${this.cgpa}`; }
+}
+const s1 = new Student('Shaik Abdulkalam', 8.28);
+document.getElementById('classDemoOut').textContent = s1.describe();
+</script>
+</body>
+</html>

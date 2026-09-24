@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a button to redirect the user to another webpage</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>324. Create a button to redirect the user to another webpage</h1>
+      <p class="description">Demonstrates navigating to a different URL programmatically using location.href.</p>
+      <div class="demo-area">
+<button onclick="redirectDemo()">Go to Home Page</button><p style="color:var(--muted); font-size:0.85rem;">(Redirects to ../index.html of this project)</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 324 of 425</footer>
+<script>
+function redirectDemo() { location.href = '../index.html'; }
+</script>
+</body>
+</html>

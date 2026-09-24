@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a dropdown menu using HTML and CSS</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.dropdown { position: relative; display: inline-block; } .dropdown-btn { background: var(--blue); color: #fff; padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer; } .dropdown-content { display: none; position: absolute; background: #fff; min-width: 140px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; z-index: 5; } .dropdown-content a { display: block; padding: 10px 14px; color: var(--text); text-decoration: none; } .dropdown-content a:hover { background: var(--light-blue); } .dropdown:hover .dropdown-content { display: block; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>54. Create a dropdown menu using HTML and CSS</h1>
+      <p class="description">A hover-triggered dropdown menu built with pure CSS, no JavaScript required.</p>
+      <div class="demo-area">
+<div class="dropdown"><button class="dropdown-btn">Menu &#9662;</button><div class="dropdown-content"><a href="#">Profile</a><a href="#">Settings</a><a href="#">Logout</a></div></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 54 of 425</footer>
+
+</body>
+</html>

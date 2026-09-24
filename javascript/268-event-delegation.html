@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate event delegation</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+#delegateList li { background: var(--light-blue); padding: 8px; margin-bottom: 6px; border-radius: 6px; cursor: pointer; } #delegateList li.selected { background: var(--accent); color: #fff; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>268. Demonstrate event delegation</h1>
+      <p class="description">Demonstrates attaching a single listener to a parent element to handle events from dynamically added children.</p>
+      <div class="demo-area">
+<button onclick="addDelegatedItem()">Add Item</button><ul id="delegateList" style="list-style:none; padding:0; margin-top:10px;"></ul><p id="delegateOutput" style="color:var(--muted);">Click any item (even ones added later) to select it.</p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 268 of 425</footer>
+<script>
+let delegateCount = 0;
+function addDelegatedItem() {
+  delegateCount++;
+  const li = document.createElement('li');
+  li.textContent = 'Item ' + delegateCount;
+  document.getElementById('delegateList').appendChild(li);
+}
+// A single listener on the parent handles clicks on ALL children, including future ones
+document.getElementById('delegateList').addEventListener('click', (e) => {
+  if (e.target.tagName === 'LI') {
+    document.querySelectorAll('#delegateList li').forEach(li => li.classList.remove('selected'));
+    e.target.classList.add('selected');
+    document.getElementById('delegateOutput').textContent = 'Selected: ' + e.target.textContent;
+  }
+});
+addDelegatedItem(); addDelegatedItem(); addDelegatedItem();
+</script>
+</body>
+</html>

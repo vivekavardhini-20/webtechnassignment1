@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonstrate the Request-Response Cycle in a server-side application</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>Node.js Backend Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>363. Demonstrate the Request-Response Cycle in a server-side application</h1>
+      <p class="description">Demonstrates logging the full lifecycle of a request as it comes in and a response is sent back.</p>
+      <div class="node-note">&#9888; This is <strong>server-side Node.js code</strong>. It cannot run inside a static browser HTML file &mdash; copy it into a <code>.js</code> file and run it with <code>node filename.js</code> (after <code>npm install</code>ing any packages used).</div><pre class="code-block">const http = require(&#x27;http&#x27;);
+
+const server = http.createServer((req, res) =&gt; {
+  console.log(`[REQUEST] ${req.method} ${req.url} received at ${new Date().toISOString()}`);
+
+  res.writeHead(200, { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; });
+  const responseBody = JSON.stringify({ message: &#x27;Response sent back to client&#x27;, path: req.url });
+  res.end(responseBody);
+
+  console.log(&#x27;[RESPONSE] Sent back to client.&#x27;);
+});
+
+server.listen(3000, () =&gt; console.log(&#x27;Server ready - watch the console as you make requests.&#x27;));</pre>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to Node.js Backend Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>Node.js Backend Programs &mdash; Question 363 of 425</footer>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validate a dropdown/select box</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>289. Validate a dropdown/select box</h1>
+      <p class="description">Demonstrates checking that the user picked a real option and not the placeholder.</p>
+      <div class="demo-area">
+<form class="demo-form" onsubmit="return validateSelectField()"><label for="courseSelectValidate">Course</label><select id="courseSelectValidate"><option value="">-- Select a Course --</option><option value="cse">CSE</option><option value="ece">ECE</option></select><button type="submit">Submit</button></form><p id="selectValidateOut" class="error-text"></p>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 289 of 425</footer>
+<script>
+function validateSelectField() {
+  const value = document.getElementById('courseSelectValidate').value;
+  const out = document.getElementById('selectValidateOut');
+  if (value === '') { out.textContent = 'Please select a course.'; return false; }
+  out.className = 'success-text'; out.textContent = 'Course selected: ' + value;
+  return false;
+}
+</script>
+</body>
+</html>

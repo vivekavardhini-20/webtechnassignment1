@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a program to sort an array</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>103. Write a program to sort an array</h1>
+      <p class="description">Sorts a numeric array in ascending and descending order using the sort() method with a comparator.</p>
+      <div class="demo-area">
+<input type="text" id="sortArrInput" value="45, 3, 89, 12, 67"><button onclick="sortArrayDemo()">Sort</button><pre id="sortArrOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 103 of 425</footer>
+<script>
+function sortArrayDemo() {
+  const arr = document.getElementById('sortArrInput').value.split(',').map(Number);
+  const asc = [...arr].sort((a, b) => a - b);
+  const desc = [...arr].sort((a, b) => b - a);
+  document.getElementById('sortArrOut').textContent = `Original: [${arr.join(', ')}]\nAscending: [${asc.join(', ')}]\nDescending: [${desc.join(', ')}]`;
+}
+sortArrayDemo();
+</script>
+</body>
+</html>

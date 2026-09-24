@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a program to show/hide an HTML element</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>114. Create a program to show/hide an HTML element</h1>
+      <p class="description">Demonstrates toggling an element's visibility between shown and hidden using JavaScript.</p>
+      <div class="demo-area">
+<button onclick="toggleShowHide()">Toggle Visibility</button><div class="box" id="showHideTarget" style="margin-top:10px;">You can see me!</div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 114 of 425</footer>
+<script>
+function toggleShowHide() { const el = document.getElementById('showHideTarget'); el.style.display = el.style.display === 'none' ? 'block' : 'none'; }
+</script>
+</body>
+</html>

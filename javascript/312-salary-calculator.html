@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an employee salary form and calculate salary details</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+  <header class="site-header"><h1>JavaScript Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>312. Create an employee salary form and calculate salary details</h1>
+      <p class="description">Calculates net salary from basic pay plus allowances minus deductions.</p>
+      <div class="demo-area">
+<div class="demo-form"><label>Basic Pay (₹)</label><input type="number" id="basicPay" value="30000"><label>Allowances (₹)</label><input type="number" id="allowances" value="5000"><label>Deductions (₹)</label><input type="number" id="deductions" value="2000"><button onclick="calculateSalary()">Calculate</button></div><pre id="salaryOut"></pre>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to JavaScript Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>JavaScript Programs &mdash; Question 312 of 425</footer>
+<script>
+function calculateSalary() {
+  const basic = parseFloat(document.getElementById('basicPay').value) || 0;
+  const allowances = parseFloat(document.getElementById('allowances').value) || 0;
+  const deductions = parseFloat(document.getElementById('deductions').value) || 0;
+  const net = basic + allowances - deductions;
+  document.getElementById('salaryOut').textContent = `Basic: ₹${basic}\nAllowances: ₹${allowances}\nDeductions: ₹${deductions}\nNet Salary: ₹${net}`;
+}
+calculateSalary();
+</script>
+</body>
+</html>

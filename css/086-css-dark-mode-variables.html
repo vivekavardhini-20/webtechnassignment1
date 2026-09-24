@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a dark-mode webpage using CSS variables</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.theme-demo-box { --bg: #ffffff; --fg: #1f3864; padding: 20px; border-radius: 10px; background: var(--bg); color: var(--fg); border: 1px solid var(--border); transition: all 0.3s ease; } .theme-demo-box.dark-theme { --bg: #1f2937; --fg: #f4f7fb; }
+</style>
+</head>
+<body>
+
+  <header class="site-header"><h1>CSS Programs</h1></header>
+
+  <main>
+    <div class="program-page">
+      <h1>86. Create a dark-mode webpage using CSS variables</h1>
+      <p class="description">Demonstrates implementing a light/dark theme toggle by swapping a set of CSS custom properties.</p>
+      <div class="demo-area">
+<div class="theme-demo-box" id="themeDemoBox"><p>This box switches between light and dark themes.</p><button onclick="toggleDemoTheme()">Toggle Theme</button></div>
+</div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="secondary" href="index.html">Back to CSS Programs</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>CSS Programs &mdash; Question 86 of 425</footer>
+<script>
+function toggleDemoTheme() { document.getElementById('themeDemoBox').classList.toggle('dark-theme'); }
+</script>
+</body>
+</html>
